@@ -1,0 +1,9 @@
+E:\BTL_LTGD\btlon\btlon\bin\Debug\btlon.exe
+E:\BTL_LTGD\btlon\btlon\bin\Debug\btlon.pdb
+E:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csprojAssemblyReference.cache
+E:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Form1.resources
+E:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Properties.Resources.resources
+E:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csproj.GenerateResource.cache
+E:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csproj.CoreCompileInputs.cache
+E:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.exe
+E:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.pdb
