@@ -102,9 +102,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="sanpham\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
@@ -114,6 +112,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="login\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sanpham\OIP2MCJIFZB.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sanpham\OIP6UH2YKL5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sanpham\OIP9K2MN5AX.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sanpham\OIP9NYJ2P02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sanpham\OIP24GYRD5V.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sanpham\OIPBJA2NU8X.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sanpham\OIPHORYPBFX.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sanpham\OIPSWEXF6M8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sanpham\OIPSZVNE6NX.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sanpham\OIPTMD3IIKL.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sanpham\OIPVPLUS8S5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sanpham\OIPXU3JKQJM.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\34627.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

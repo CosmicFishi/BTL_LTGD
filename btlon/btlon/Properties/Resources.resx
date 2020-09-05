@@ -118,7 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="OIP9NYJ2P02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sanpham\OIP9NYJ2P02.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OIP6UH2YKL5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sanpham\OIP6UH2YKL5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OIP2MCJIFZB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sanpham\OIP2MCJIFZB.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OIPTMD3IIKL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sanpham\OIPTMD3IIKL.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OIPSWEXF6M8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sanpham\OIPSWEXF6M8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OIP24GYRD5V" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sanpham\OIP24GYRD5V.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OIPXU3JKQJM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sanpham\OIPXU3JKQJM.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OIPSZVNE6NX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sanpham\OIPSZVNE6NX.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OIPHORYPBFX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sanpham\OIPHORYPBFX.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OIP9K2MN5AX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sanpham\OIP9K2MN5AX.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OIPBJA2NU8X" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sanpham\OIPBJA2NU8X.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OIPVPLUS8S5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sanpham\OIPVPLUS8S5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\login\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="34627" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\34627.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

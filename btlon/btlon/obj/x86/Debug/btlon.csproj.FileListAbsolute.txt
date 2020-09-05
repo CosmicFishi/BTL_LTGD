@@ -8,3 +8,11 @@ E:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csproj.CoreCompileInputs.cache
 E:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.exe
 E:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.pdb
 E:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Login.resources
+C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.exe
+C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.pdb
+C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\bin\Debug\btlon.exe
+C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\bin\Debug\btlon.pdb
+C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Form1.resources
+C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Login.resources
+C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Properties.Resources.resources
+C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csproj.GenerateResource.Cache
