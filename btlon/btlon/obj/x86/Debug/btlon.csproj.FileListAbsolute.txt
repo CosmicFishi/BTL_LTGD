@@ -16,3 +16,4 @@ C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Form1.resources
 C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Login.resources
 C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Properties.Resources.resources
 C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csprojResolveAssemblyReference.cache

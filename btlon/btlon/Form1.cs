@@ -15,7 +15,8 @@ namespace btlon
         string[] h2 = { "Tài khoản", "Loại sản phẩm", "Giới thiệu", "Dịch vụ"};
         string[] category = { "Đồ điện", "Quần áo", "Áo khoác"};
         string[] services = {"Dịch vụ đổi trả", "Dịch vụ bảo hành", "Dịch vụ chăm sóc KH"};
-
+       
+        
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +40,9 @@ namespace btlon
             Font fh3 = new Font("Microsoft Sans Serif", 13);
             foreach(string s in category)
                 tvMenu.Nodes[1].Nodes.Add(new TreeNode() { Text = s, NodeFont = fh3 });
-
+            tvMenu.SelectedNode = tvMenu.Nodes[1];
+            tvMenu.Nodes[1].Expand();
+           
             //hiển thị danh sách các node ở bậc 2 trong "Services"
             foreach (string s in services)
                 tvMenu.Nodes[3].Nodes.Add(new TreeNode() { Text = s, NodeFont = fh3 });
@@ -68,7 +71,6 @@ namespace btlon
         }
         private void tvMenu_AfterSelect(object sender, TreeViewEventArgs e)
         {
-
             lbPagination.Text = tvMenu.SelectedNode.FullPath;
         }
 
