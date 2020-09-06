@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tvMenu = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -37,7 +38,6 @@
             this.lvSp = new System.Windows.Forms.ListView();
             this.btnView = new System.Windows.Forms.Button();
             this.lbPagination = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,6 +58,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 794);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(-1, 708);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(296, 46);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Hostline: 00003333";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -88,7 +101,6 @@
             this.tvMenu.Name = "tvMenu";
             this.tvMenu.Scrollable = false;
             this.tvMenu.ShowLines = false;
-            this.tvMenu.ShowPlusMinus = false;
             this.tvMenu.Size = new System.Drawing.Size(265, 578);
             this.tvMenu.TabIndex = 0;
             this.tvMenu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterSelect);
@@ -161,19 +173,6 @@
             this.lbPagination.Size = new System.Drawing.Size(240, 23);
             this.lbPagination.TabIndex = 7;
             this.lbPagination.Text = "Home";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-1, 708);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 46);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Hostline: 00003333";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
