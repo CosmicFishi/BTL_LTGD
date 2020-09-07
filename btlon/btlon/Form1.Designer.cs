@@ -103,7 +103,7 @@
             this.tvMenu.ShowLines = false;
             this.tvMenu.Size = new System.Drawing.Size(265, 578);
             this.tvMenu.TabIndex = 0;
-            this.tvMenu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterSelect);
+            this.tvMenu.Click += new System.EventHandler(this.tvMenu_Click);
             // 
             // panel2
             // 

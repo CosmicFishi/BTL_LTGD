@@ -13,7 +13,7 @@ namespace btlon
     public partial class Form1 : Form
     {
         string[] h2 = { "Tài khoản", "Loại sản phẩm", "Giới thiệu", "Dịch vụ"};
-        string[] category = { "Đồ điện", "Quần áo", "Áo khoác"};
+        string[] category = { "Điện thoại máy tính bảng", "Điện tử điện lạnh","Phụ kiện thiết bị số", "Mẹ và bé"};
         string[] services = {"Dịch vụ đổi trả", "Dịch vụ bảo hành", "Dịch vụ chăm sóc KH"};
        
         
@@ -26,7 +26,7 @@ namespace btlon
         {
             loadUser();
             loadMenu();
-            loadSp();
+            loadSpById(1);
             btnView.BackColor = Color.FromArgb(255, 70, 195, 219);
         }
 
@@ -47,33 +47,37 @@ namespace btlon
             foreach (string s in services)
                 tvMenu.Nodes[3].Nodes.Add(new TreeNode() { Text = s, NodeFont = fh3 });
         }
-      
+
+        //đổi icon người dùng thành hình tròn.
         void loadUser(){
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
             path.AddEllipse(0, 0, picAvatar.Width, picAvatar.Height);
             picAvatar.Region = new Region(path);
         }
 
-        void loadSp() { 
-            string[] pathPic = Directory.GetFiles(@"C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\sanpham");
+        //load danh sách sản phẩm theo loại sản phẩm.
+        void loadSpById(int id) {
+            string[] pathPic = Directory.GetFiles(@"C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\sanpham\" + id);
             Font fh3 = new Font("Microsoft Sans Serif", 13);
 
             ImageList imageList = new ImageList();
             imageList.ImageSize = new Size(150, 150);
+            lvSp.Clear();
             lvSp.LargeImageList = imageList;
 
             for (int i = 0; i < pathPic.Length; i++)
             {
-                imageList.Images.Add(i.ToString(), Image.FromFile(pathPic[i]));
-                lvSp.Items.Add(new ListViewItem() { Text = "SP thứ "+i.ToString()+" 300k", ImageKey = i.ToString(), Font = fh3});
-            }
-            
-        }
-        private void tvMenu_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            lbPagination.Text = tvMenu.SelectedNode.FullPath;
-        }
+                string f = pathPic[i]; //f là file name khai báo để dùng cho ngắn gọn
+                string productName = f.Substring(0, f.LastIndexOf(@"_")).Substring(1 + f.LastIndexOf(@"\"));
+                string price = f.Substring(0, f.LastIndexOf(@".")).Substring(1 + f.LastIndexOf(@"_"))+"000";
 
+                imageList.Images.Add(i.ToString(), Image.FromFile(pathPic[i]));
+                lvSp.Items.Add(new ListViewItem() {
+                    Text = productName + "    " + price + "Đ", 
+                    ImageKey = i.ToString(), Font = fh3 
+                });
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if (lvSp.View == View.List)
@@ -86,5 +90,18 @@ namespace btlon
                 btnView.Text = "LIST";
             }
         }
+
+        private void tvMenu_Click(object sender, EventArgs e)
+        {
+            lbPagination.Text = tvMenu.SelectedNode.FullPath;
+            for (int i = 0; i < category.Length; i++)
+            {
+                if (tvMenu.Nodes[1].Nodes[i] == tvMenu.SelectedNode)
+                {
+                    loadSpById(i+1);
+                }
+            }
+        }
+
     }
 }
