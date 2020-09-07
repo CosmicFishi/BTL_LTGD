@@ -88,6 +88,8 @@
             this.txtBoxPassword.Size = new System.Drawing.Size(247, 31);
             this.txtBoxPassword.TabIndex = 3;
             this.txtBoxPassword.TextChanged += new System.EventHandler(this.txtBoxAccount_TextChanged);
+            this.txtBoxPassword.Enter += new System.EventHandler(this.txtBoxPassword_Enter);
+            this.txtBoxPassword.Leave += new System.EventHandler(this.txtBoxPassword_Leave);
             // 
             // txtBoxAccount
             // 
@@ -99,6 +101,8 @@
             this.txtBoxAccount.Name = "txtBoxAccount";
             this.txtBoxAccount.Size = new System.Drawing.Size(247, 31);
             this.txtBoxAccount.TabIndex = 3;
+            this.txtBoxAccount.Enter += new System.EventHandler(this.txtBoxAccount_Enter);
+            this.txtBoxAccount.Leave += new System.EventHandler(this.txtBoxAccount_Leave);
             // 
             // label2
             // 
@@ -151,6 +155,8 @@
             this.btLogin.TabIndex = 6;
             this.btLogin.Text = "Đăng Nhập";
             this.btLogin.UseVisualStyleBackColor = false;
+            this.btLogin.MouseLeave += new System.EventHandler(this.btLogin_MouseLeave);
+            this.btLogin.MouseHover += new System.EventHandler(this.btLogin_MouseHover);
             // 
             // checkBoxShowPassword
             // 
