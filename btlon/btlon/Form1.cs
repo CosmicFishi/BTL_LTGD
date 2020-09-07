@@ -68,8 +68,8 @@ namespace btlon
             for (int i = 0; i < pathPic.Length; i++)
             {
                 string f = pathPic[i]; //f là file name khai báo để dùng cho ngắn gọn
-                string productName = f.Substring(0, f.LastIndexOf(@"_")).Substring(1 + f.LastIndexOf(@"\"));
-                string price = f.Substring(0, f.LastIndexOf(@".")).Substring(1 + f.LastIndexOf(@"_"))+"000";
+                string productName = f.Substring(0, f.LastIndexOf("_")).Substring(1 + f.LastIndexOf(@"\"));
+                string price = f.Substring(0, f.LastIndexOf(".")).Substring(1 + f.LastIndexOf("_"))+"000";
 
                 imageList.Images.Add(i.ToString(), Image.FromFile(pathPic[i]));
                 lvSp.Items.Add(new ListViewItem() {
