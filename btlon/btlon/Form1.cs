@@ -15,8 +15,32 @@ namespace btlon
         string[] h2 = { "Tài khoản", "Loại sản phẩm", "Giới thiệu", "Dịch vụ"};
         string[] category = { "Điện thoại máy tính bảng", "Điện tử điện lạnh","Phụ kiện thiết bị số", "Mẹ và bé"};
         string[] services = {"Dịch vụ đổi trả", "Dịch vụ bảo hành", "Dịch vụ chăm sóc KH"};
-       
+       // struct 
+        struct SanPham {
+            public string img;
+            public string ten;
+            public string gia;
+        }
+
+        List<SanPham> dienThoai = new List<SanPham>();
+        List<SanPham> dienTu = new List<SanPham>();
+        List<SanPham> phuKien = new List<SanPham>();
+        List<SanPham> meBe = new List<SanPham>();
+
+        void loadListSp(int id, List<SanPham> arr) {
+            string[] pathPic = Directory.GetFiles(@"C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\sanpham\" + id);
         
+            for (int i = 0; i < pathPic.Length; i++)
+            {
+                string f = pathPic[i]; //f là file name khai báo để dùng cho ngắn gọn
+                SanPham a = new SanPham();
+                a.img = f;
+                a.ten = f.Substring(0, f.LastIndexOf("_")).Substring(1 + f.LastIndexOf(@"\"));
+                a.gia = f.Substring(0, f.LastIndexOf(".")).Substring(1 + f.LastIndexOf("_")) + "000";
+                arr.Add(a);
+            }
+        }
+       
         public Form1()
         {
             InitializeComponent();
@@ -26,11 +50,16 @@ namespace btlon
         {
             loadUser();
             loadMenu();
-            loadSpById(1);
+            loadSpByName(dienThoai);
             btnView.BackColor = Color.FromArgb(255, 70, 195, 219);
+            loadListSp(1, dienThoai);
+            loadListSp(2, dienTu);
+            loadListSp(3, phuKien);
+            loadListSp(4, meBe);
         }
 
-        void loadMenu(){
+        void loadMenu()
+        {
             //hiển thị danh sách các node ở bậc 1 trong treeview
             Font fh2 = new Font("Microsoft Sans Serif", 14);
             foreach(string s in h2)
@@ -56,8 +85,7 @@ namespace btlon
         }
 
         //load danh sách sản phẩm theo loại sản phẩm.
-        void loadSpById(int id) {
-            string[] pathPic = Directory.GetFiles(@"C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\sanpham\" + id);
+        void loadSpByName(List<SanPham> arr) {
             Font fh3 = new Font("Microsoft Sans Serif", 13);
 
             ImageList imageList = new ImageList();
@@ -65,19 +93,18 @@ namespace btlon
             lvSp.Clear();
             lvSp.LargeImageList = imageList;
 
-            for (int i = 0; i < pathPic.Length; i++)
+            for (int i = 0; i < arr.Count; i++ )
             {
-                string f = pathPic[i]; //f là file name khai báo để dùng cho ngắn gọn
-                string productName = f.Substring(0, f.LastIndexOf("_")).Substring(1 + f.LastIndexOf(@"\"));
-                string price = f.Substring(0, f.LastIndexOf(".")).Substring(1 + f.LastIndexOf("_"))+"000";
-
-                imageList.Images.Add(i.ToString(), Image.FromFile(pathPic[i]));
-                lvSp.Items.Add(new ListViewItem() {
-                    Text = productName + "    " + price + "Đ", 
-                    ImageKey = i.ToString(), Font = fh3 
+                imageList.Images.Add(i.ToString(), Image.FromFile(arr[i].img));
+                lvSp.Items.Add(new ListViewItem()
+                {
+                    Text = arr[i].ten +" "+ arr[i].gia+"d",
+                    ImageKey = i.ToString(),
+                    Font = fh3
                 });
-            }
+            }   
         }
+       
         private void button1_Click(object sender, EventArgs e)
         {
             if (lvSp.View == View.List)
@@ -94,13 +121,39 @@ namespace btlon
         private void tvMenu_Click(object sender, EventArgs e)
         {
             lbPagination.Text = tvMenu.SelectedNode.FullPath;
-            for (int i = 0; i < category.Length; i++)
-            {
-                if (tvMenu.Nodes[1].Nodes[i] == tvMenu.SelectedNode)
-                {
-                    loadSpById(i+1);
-                }
+            switch (tvMenu.SelectedNode.Text){
+                case "Điện thoại máy tính bảng":
+                    loadSpByName(dienThoai);
+                    break;
+                case "Điện tử điện lạnh":
+                    loadSpByName(dienTu);
+                    break;
+                case "Phụ kiện thiết bị số":
+                    loadSpByName(phuKien);
+                    break;
+                case "Mẹ và bé":
+                    loadSpByName(meBe);
+                    break;
+                default:
+                    break;
+                    }
+        }
+
+        private void lvSp_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (lvSp.SelectedItems.Count == 0)
+                pnDetail.Visible = true;
+            else {
+                pnDetail.Visible = true;
+                lbTenSp.Text = lvSp.SelectedItems[0].Text.Substring(0, lvSp.SelectedItems[0].Text.IndexOf(" "));
+                lbGiaSp.Text = lvSp.SelectedItems[0].Text.Substring(lvSp.SelectedItems[0].Text.IndexOf(" "));
             }
+        }
+
+        private void numberSp_ValueChanged(object sender, EventArgs e)
+        {
+            if (numberSp.Value == 0) btnAddCart.Enabled = false;
+            else btnAddCart.Enabled = true;
         }
 
     }

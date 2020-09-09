@@ -38,10 +38,22 @@
             this.lvSp = new System.Windows.Forms.ListView();
             this.btnView = new System.Windows.Forms.Button();
             this.lbPagination = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pnDetail = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbTenSp = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbGiaSp = new System.Windows.Forms.Label();
+            this.numberSp = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnAddCart = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
+            this.pnDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numberSp)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -147,12 +159,14 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lvSp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(219)))));
             this.lvSp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvSp.FullRowSelect = true;
             this.lvSp.Location = new System.Drawing.Point(308, 144);
             this.lvSp.Name = "lvSp";
-            this.lvSp.Size = new System.Drawing.Size(779, 638);
+            this.lvSp.Size = new System.Drawing.Size(779, 560);
             this.lvSp.TabIndex = 5;
             this.lvSp.TileSize = new System.Drawing.Size(500, 100);
             this.lvSp.UseCompatibleStateImageBehavior = false;
+            this.lvSp.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvSp_ItemSelectionChanged);
             // 
             // btnView
             // 
@@ -174,6 +188,118 @@
             this.lbPagination.TabIndex = 7;
             this.lbPagination.Text = "Home";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(73, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 18);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Thông tin chi tiết:";
+            // 
+            // pnDetail
+            // 
+            this.pnDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnDetail.Controls.Add(this.label5);
+            this.pnDetail.Controls.Add(this.btnAddCart);
+            this.pnDetail.Controls.Add(this.label8);
+            this.pnDetail.Controls.Add(this.numberSp);
+            this.pnDetail.Controls.Add(this.lbGiaSp);
+            this.pnDetail.Controls.Add(this.label6);
+            this.pnDetail.Controls.Add(this.lbTenSp);
+            this.pnDetail.Controls.Add(this.label3);
+            this.pnDetail.Controls.Add(this.label2);
+            this.pnDetail.Location = new System.Drawing.Point(301, 710);
+            this.pnDetail.Name = "pnDetail";
+            this.pnDetail.Size = new System.Drawing.Size(799, 83);
+            this.pnDetail.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(196, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 18);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Tên sp:";
+            // 
+            // lbTenSp
+            // 
+            this.lbTenSp.AutoSize = true;
+            this.lbTenSp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenSp.Location = new System.Drawing.Point(258, 18);
+            this.lbTenSp.Name = "lbTenSp";
+            this.lbTenSp.Size = new System.Drawing.Size(0, 18);
+            this.lbTenSp.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(195, 48);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 18);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Giá sp:";
+            // 
+            // lbGiaSp
+            // 
+            this.lbGiaSp.AutoSize = true;
+            this.lbGiaSp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGiaSp.Location = new System.Drawing.Point(258, 49);
+            this.lbGiaSp.Name = "lbGiaSp";
+            this.lbGiaSp.Size = new System.Drawing.Size(0, 18);
+            this.lbGiaSp.TabIndex = 12;
+            // 
+            // numberSp
+            // 
+            this.numberSp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numberSp.Location = new System.Drawing.Point(478, 16);
+            this.numberSp.Name = "numberSp";
+            this.numberSp.Size = new System.Drawing.Size(120, 23);
+            this.numberSp.TabIndex = 13;
+            this.numberSp.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numberSp.ValueChanged += new System.EventHandler(this.numberSp_ValueChanged);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(392, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 18);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Số lượng:";
+            // 
+            // btnAddCart
+            // 
+            this.btnAddCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCart.Location = new System.Drawing.Point(395, 43);
+            this.btnAddCart.Name = "btnAddCart";
+            this.btnAddCart.Size = new System.Drawing.Size(203, 31);
+            this.btnAddCart.TabIndex = 15;
+            this.btnAddCart.Text = "Thêm vào giỏ";
+            this.btnAddCart.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label5.Location = new System.Drawing.Point(3, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(793, 5);
+            this.label5.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -181,6 +307,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(1101, 794);
+            this.Controls.Add(this.pnDetail);
             this.Controls.Add(this.lbPagination);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.lvSp);
@@ -195,6 +322,9 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
+            this.pnDetail.ResumeLayout(false);
+            this.pnDetail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numberSp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,6 +341,16 @@
         private System.Windows.Forms.Label lbPagination;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel pnDetail;
+        private System.Windows.Forms.Button btnAddCart;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numberSp;
+        private System.Windows.Forms.Label lbGiaSp;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbTenSp;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }
 
