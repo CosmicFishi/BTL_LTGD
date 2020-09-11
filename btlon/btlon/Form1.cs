@@ -15,7 +15,7 @@ namespace btlon
         string[] h2 = { "Tài khoản", "Loại sản phẩm", "Giới thiệu", "Dịch vụ"};
         string[] category = { "Điện thoại máy tính bảng", "Điện tử điện lạnh","Phụ kiện thiết bị số", "Mẹ và bé"};
         string[] services = {"Dịch vụ đổi trả", "Dịch vụ bảo hành", "Dịch vụ chăm sóc KH"};
-       // struct 
+      
         struct SanPham {
             public string img;
             public string ten;
@@ -28,7 +28,6 @@ namespace btlon
         List<SanPham> meBe = new List<SanPham>();
 
         void loadListSp(int id, List<SanPham> arr) {
-            //MessageBox.Show(Application.StartupPath);
             string[] pathPic = Directory.GetFiles(Application.StartupPath + @"\" + id);
         
             for (int i = 0; i < pathPic.Length; i++)
@@ -54,7 +53,6 @@ namespace btlon
             loadUser();
             loadMenu();
             loadSpByName(dienThoai);
-            btnView.BackColor = Color.FromArgb(255, 70, 195, 219);
             loadListSp(1, dienThoai);
             loadListSp(2, dienTu);
             loadListSp(3, phuKien);
@@ -90,60 +88,40 @@ namespace btlon
         //load danh sách sản phẩm theo loại sản phẩm.
         void loadSpByName(List<SanPham> arr) {
             Font fh3 = new Font("Microsoft Sans Serif", 13);
-
-            ImageList imageList = new ImageList();
-            imageList.ImageSize = new Size(150, 150);
             lvSp.Clear();
+            ColumnHeader name = new ColumnHeader() { Text = "Hinh anh", Width = 200 };
+            ColumnHeader price = new ColumnHeader() { Text = "Gia SP", Width = 100 };
+            lvSp.Columns.AddRange(new ColumnHeader[] { name, price });
+
+            ImageList imageList = new ImageList() { ImageSize = new Size(150, 200) };
+
             lvSp.LargeImageList = imageList;
 
-            for (int i = 0; i < arr.Count; i++ )
+            for (int i = 0; i < arr.Count; i++)
             {
                 imageList.Images.Add(i.ToString(), Image.FromFile(arr[i].img));
-                lvSp.Items.Add(new ListViewItem()
-                {
-                    Text = arr[i].ten +" "+ arr[i].gia+"d",
-                    ImageKey = i.ToString(),
-                    Font = fh3
-                });
+
+                ListViewItem row = new ListViewItem() { Text = arr[i].ten };
+                ListViewItem.ListViewSubItem priceSp = new ListViewItem.ListViewSubItem() { Text = arr[i].gia };
+                row.SubItems.Add(priceSp);
+                row.ImageKey = i.ToString();
+                lvSp.Items.Add(row);
             }   
+
+            //for (int i = 0; i < arr.Count; i++ )
+            //{
+            //    imageList.Images.Add(i.ToString(), Image.FromFile(arr[i].img));
+
+            //    ListViewItem row = new ListViewItem() { Text = "anh 1" };
+            //    ListViewItem.ListViewSubItem nameSP = new ListViewItem.ListViewSubItem() { Text = arr[i].ten };
+            //    ListViewItem.ListViewSubItem priceSp = new ListViewItem.ListViewSubItem() { Text = arr[i].gia };
+            //    row.SubItems.AddRange(new ListViewItem.ListViewSubItem[] {nameSP, priceSp});
+            //    row.ImageKey = i.ToString();
+                
+            //    lvSp.Items.Add(row);
+            //}   
         }
        
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (lvSp.View == View.List)
-            {
-                lvSp.View = View.LargeIcon;
-                btnView.Text = "BIG";
-            }
-            else {
-                lvSp.View = View.List;
-                btnView.Text = "LIST";
-            }
-        }
-
-        //private void tvMenu_Click(object sender, EventArgs e)
-        //{
-            //lbPagination.Text = tvMenu.SelectedNode.FullPath;
-            //MessageBox.Show(tvMenu.SelectedNode.Nodes.ToString());
-            //
-            //switch (tvMenu.SelectedNode.Text)
-            //{
-        //        case "Điện thoại máy tính bảng":
-        //            loadSpByName(dienThoai);
-        //            break;
-        //        case "Điện tử điện lạnh":
-        //            loadSpByName(dienTu);
-        //            break;
-        //        case "Phụ kiện thiết bị số":
-        //            loadSpByName(phuKien);
-        //            break;
-        //        case "Mẹ và bé":
-        //            loadSpByName(meBe);
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
 
         private void lvSp_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
@@ -151,8 +129,8 @@ namespace btlon
                 pnDetail.Visible = true;
             else {
                 pnDetail.Visible = true;
-                lbTenSp.Text = lvSp.SelectedItems[0].Text.Substring(0, lvSp.SelectedItems[0].Text.IndexOf(" "));
-                lbGiaSp.Text = lvSp.SelectedItems[0].Text.Substring(lvSp.SelectedItems[0].Text.IndexOf(" "));
+                lbTenSp.Text = lvSp.SelectedItems[0].SubItems[0].Text;
+                lbGiaSp.Text = lvSp.SelectedItems[0].SubItems[1].Text;
             }
         }
 
@@ -189,22 +167,11 @@ namespace btlon
             g.Show();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnDetail_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnAddCart_Click(object sender, EventArgs e){
             if (lvSp.SelectedItems.Count > 0) {
                 string text = lvSp.SelectedItems[0].Text;
                 MessageBox.Show(text);
             }
-                //MessageBox.Show(lvSp.Items.IndexOf(lvSp.SelectedItems[0]).ToString());
         }
 
     }
