@@ -36,8 +36,9 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.colPicture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbTongTien = new System.Windows.Forms.Label();
+            this.colPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TTKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,14 +50,14 @@
             this.TTKH.Controls.Add(this.lbTen);
             this.TTKH.Location = new System.Drawing.Point(14, 8);
             this.TTKH.Name = "TTKH";
-            this.TTKH.Size = new System.Drawing.Size(470, 102);
+            this.TTKH.Size = new System.Drawing.Size(522, 102);
             this.TTKH.TabIndex = 0;
             this.TTKH.TabStop = false;
             this.TTKH.Text = "Thông tin khách hàng";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(11, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(30, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(128, 72);
             this.pictureBox1.TabIndex = 1;
@@ -66,7 +67,7 @@
             // 
             this.lbSoTK.AutoSize = true;
             this.lbSoTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSoTK.Location = new System.Drawing.Point(177, 63);
+            this.lbSoTK.Location = new System.Drawing.Point(209, 61);
             this.lbSoTK.Name = "lbSoTK";
             this.lbSoTK.Size = new System.Drawing.Size(91, 17);
             this.lbSoTK.TabIndex = 0;
@@ -76,7 +77,7 @@
             // 
             this.lbTen.AutoSize = true;
             this.lbTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTen.Location = new System.Drawing.Point(177, 32);
+            this.lbTen.Location = new System.Drawing.Point(209, 30);
             this.lbTen.Name = "lbTen";
             this.lbTen.Size = new System.Drawing.Size(37, 17);
             this.lbTen.TabIndex = 0;
@@ -98,10 +99,11 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colPicture,
             this.colName,
+            this.colAmount,
             this.colPrice});
             this.listView1.Location = new System.Drawing.Point(15, 121);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(466, 311);
+            this.listView1.Size = new System.Drawing.Size(521, 311);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -117,10 +119,10 @@
             this.colName.Text = "Tên";
             this.colName.Width = 136;
             // 
-            // colPrice
+            // colAmount
             // 
-            this.colPrice.Text = "Giá";
-            this.colPrice.Width = 156;
+            this.colAmount.Text = "Số lượng";
+            this.colAmount.Width = 71;
             // 
             // lbTongTien
             // 
@@ -132,12 +134,17 @@
             this.lbTongTien.Text = "Tổng tiền: ";
             this.lbTongTien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // colPrice
+            // 
+            this.colPrice.Text = "Giá";
+            this.colPrice.Width = 125;
+            // 
             // gioHang1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(492, 487);
+            this.ClientSize = new System.Drawing.Size(548, 487);
             this.Controls.Add(this.lbTongTien);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnThanhToan);
@@ -166,7 +173,8 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader colPicture;
         private System.Windows.Forms.ColumnHeader colName;
-        private System.Windows.Forms.ColumnHeader colPrice;
+        private System.Windows.Forms.ColumnHeader colAmount;
         private System.Windows.Forms.Label lbTongTien;
+        private System.Windows.Forms.ColumnHeader colPrice;
     }
 }

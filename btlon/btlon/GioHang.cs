@@ -11,7 +11,7 @@ namespace btlon
 {
     public partial class gioHang1 : Form
     {
-        String[,] ttGioHang = {{"1", "2", "3"}, {"4","5", "6"}};
+        String[,] ttGioHang = {{"hình", "tên", "Số lượng", "9"}, {"4","5", "6", "7"}};
         String soTK;
         String tenTK;
 
@@ -38,7 +38,7 @@ namespace btlon
 
             for (int i = 0; i < TT.GetLength(0); i++ )
             {
-                string[] row = { TT[i, 0], TT[i, 1], TT[i, 2] };
+                string[] row = { TT[i, 0], TT[i, 1], TT[i, 2], TT[i,3] };
                 ListViewItem lvi = new ListViewItem(row);
                 lvi.Checked = true;
                 listView1.Items.Add(lvi);
@@ -51,8 +51,8 @@ namespace btlon
             int tongTien = 0;
             for (int i = 0; i < listView1.Items.Count; i++) {
                 if (listView1.Items[i].Checked == true) {
-                    // đi từ item  -> subitem -> text của subitem thứ 3 (giá)
-                    tongTien += int.Parse(listView1.Items[i].SubItems[2].Text.ToString());
+                    // đi từ item  -> subitem -> text của subitem thứ 4 (giá)
+                    tongTien += int.Parse(listView1.Items[i].SubItems[3].Text.ToString());
                     //MessageBox.Show(listView1.Items[i].SubItems[1].Text.ToString());
                 }
             }
@@ -67,6 +67,7 @@ namespace btlon
             taoDongTTHangHoa(ttGioHang);
             tinhTongTien();
 
+            //MessageBox.Show(listView1.Items[1].SubItems[3].Text.ToString());
             
         }
 

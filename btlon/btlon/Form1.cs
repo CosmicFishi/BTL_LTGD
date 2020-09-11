@@ -28,7 +28,8 @@ namespace btlon
         List<SanPham> meBe = new List<SanPham>();
 
         void loadListSp(int id, List<SanPham> arr) {
-            string[] pathPic = Directory.GetFiles(@"C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\sanpham\" + id);
+            //MessageBox.Show(Application.StartupPath);
+            string[] pathPic = Directory.GetFiles(Application.StartupPath + @"\" + id);
         
             for (int i = 0; i < pathPic.Length; i++)
             {
@@ -48,6 +49,8 @@ namespace btlon
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            lbGiaSp.Text = " ";
+            lbTenSp.Text = " ";
             loadUser();
             loadMenu();
             loadSpByName(dienThoai);
@@ -118,26 +121,29 @@ namespace btlon
             }
         }
 
-        private void tvMenu_Click(object sender, EventArgs e)
-        {
-            lbPagination.Text = tvMenu.SelectedNode.FullPath;
-            switch (tvMenu.SelectedNode.Text){
-                case "Điện thoại máy tính bảng":
-                    loadSpByName(dienThoai);
-                    break;
-                case "Điện tử điện lạnh":
-                    loadSpByName(dienTu);
-                    break;
-                case "Phụ kiện thiết bị số":
-                    loadSpByName(phuKien);
-                    break;
-                case "Mẹ và bé":
-                    loadSpByName(meBe);
-                    break;
-                default:
-                    break;
-                    }
-        }
+        //private void tvMenu_Click(object sender, EventArgs e)
+        //{
+            //lbPagination.Text = tvMenu.SelectedNode.FullPath;
+            //MessageBox.Show(tvMenu.SelectedNode.Nodes.ToString());
+            //
+            //switch (tvMenu.SelectedNode.Text)
+            //{
+        //        case "Điện thoại máy tính bảng":
+        //            loadSpByName(dienThoai);
+        //            break;
+        //        case "Điện tử điện lạnh":
+        //            loadSpByName(dienTu);
+        //            break;
+        //        case "Phụ kiện thiết bị số":
+        //            loadSpByName(phuKien);
+        //            break;
+        //        case "Mẹ và bé":
+        //            loadSpByName(meBe);
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
 
         private void lvSp_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
@@ -154,6 +160,51 @@ namespace btlon
         {
             if (numberSp.Value == 0) btnAddCart.Enabled = false;
             else btnAddCart.Enabled = true;
+        }
+
+        private void tvMenu_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            switch (e.Node.Text)
+            {
+                case "Điện thoại máy tính bảng":
+                    loadSpByName(dienThoai);
+                    break;
+                case "Điện tử điện lạnh":
+                    loadSpByName(dienTu);
+                    break;
+                case "Phụ kiện thiết bị số":
+                    loadSpByName(phuKien);
+                    break;
+                case "Mẹ và bé":
+                    loadSpByName(meBe);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            gioHang1 g = new gioHang1();
+            g.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnDetail_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAddCart_Click(object sender, EventArgs e){
+            if (lvSp.SelectedItems.Count > 0) {
+                string text = lvSp.SelectedItems[0].Text;
+                MessageBox.Show(text);
+            }
+                //MessageBox.Show(lvSp.Items.IndexOf(lvSp.SelectedItems[0]).ToString());
         }
 
     }
