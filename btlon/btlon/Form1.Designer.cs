@@ -46,6 +46,8 @@
             this.lbTenSp = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnChangeView = new System.Windows.Forms.Button();
+            this.txtContent = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
@@ -124,7 +126,7 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(301, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(797, 69);
+            this.panel2.Size = new System.Drawing.Size(895, 69);
             this.panel2.TabIndex = 4;
             // 
             // picAvatar
@@ -132,7 +134,7 @@
             this.picAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picAvatar.Image = global::btlon.Properties.Resources.OIP2MCJIFZB;
             this.picAvatar.InitialImage = null;
-            this.picAvatar.Location = new System.Drawing.Point(722, 12);
+            this.picAvatar.Location = new System.Drawing.Point(820, 12);
             this.picAvatar.Name = "picAvatar";
             this.picAvatar.Size = new System.Drawing.Size(53, 50);
             this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -143,7 +145,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::btlon.Properties.Resources._34627;
-            this.pictureBox1.Location = new System.Drawing.Point(660, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(758, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -156,23 +158,26 @@
             this.lvSp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvSp.BackColor = System.Drawing.Color.LightCyan;
+            this.lvSp.BackColor = System.Drawing.Color.White;
             this.lvSp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvSp.FullRowSelect = true;
             this.lvSp.Location = new System.Drawing.Point(301, 144);
             this.lvSp.Name = "lvSp";
-            this.lvSp.Size = new System.Drawing.Size(793, 492);
+            this.lvSp.Size = new System.Drawing.Size(891, 492);
             this.lvSp.TabIndex = 5;
-            this.lvSp.TileSize = new System.Drawing.Size(500, 100);
+            this.lvSp.TileSize = new System.Drawing.Size(500, 200);
             this.lvSp.UseCompatibleStateImageBehavior = false;
+            this.lvSp.View = System.Windows.Forms.View.Tile;
             this.lvSp.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvSp_ItemSelectionChanged);
             // 
             // lbPagination
             // 
+            this.lbPagination.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPagination.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPagination.Location = new System.Drawing.Point(573, 72);
             this.lbPagination.Name = "lbPagination";
-            this.lbPagination.Size = new System.Drawing.Size(303, 31);
+            this.lbPagination.Size = new System.Drawing.Size(401, 31);
             this.lbPagination.TabIndex = 7;
             this.lbPagination.Text = "Welcome ";
             this.lbPagination.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -192,14 +197,14 @@
             this.pnDetail.Controls.Add(this.label2);
             this.pnDetail.Location = new System.Drawing.Point(301, 642);
             this.pnDetail.Name = "pnDetail";
-            this.pnDetail.Size = new System.Drawing.Size(797, 114);
+            this.pnDetail.Size = new System.Drawing.Size(895, 114);
             this.pnDetail.TabIndex = 9;
             // 
             // btnAddCart
             // 
             this.btnAddCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCart.Location = new System.Drawing.Point(368, 71);
+            this.btnAddCart.Location = new System.Drawing.Point(466, 71);
             this.btnAddCart.Name = "btnAddCart";
             this.btnAddCart.Size = new System.Drawing.Size(203, 31);
             this.btnAddCart.TabIndex = 15;
@@ -212,7 +217,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(372, 45);
+            this.label8.Location = new System.Drawing.Point(470, 45);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 18);
             this.label8.TabIndex = 14;
@@ -221,7 +226,7 @@
             // numberSp
             // 
             this.numberSp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numberSp.Location = new System.Drawing.Point(451, 44);
+            this.numberSp.Location = new System.Drawing.Point(549, 44);
             this.numberSp.Name = "numberSp";
             this.numberSp.Size = new System.Drawing.Size(120, 23);
             this.numberSp.TabIndex = 13;
@@ -282,13 +287,38 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Thông tin chi tiết:";
             // 
+            // btnChangeView
+            // 
+            this.btnChangeView.Location = new System.Drawing.Point(1134, 75);
+            this.btnChangeView.Name = "btnChangeView";
+            this.btnChangeView.Size = new System.Drawing.Size(50, 49);
+            this.btnChangeView.TabIndex = 10;
+            this.btnChangeView.Text = "VIEW";
+            this.btnChangeView.UseVisualStyleBackColor = true;
+            this.btnChangeView.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtContent
+            // 
+            this.txtContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContent.Location = new System.Drawing.Point(329, 166);
+            this.txtContent.Multiline = true;
+            this.txtContent.Name = "txtContent";
+            this.txtContent.ReadOnly = true;
+            this.txtContent.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtContent.Size = new System.Drawing.Size(844, 456);
+            this.txtContent.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1098, 757);
+            this.ClientSize = new System.Drawing.Size(1196, 757);
+            this.Controls.Add(this.txtContent);
+            this.Controls.Add(this.btnChangeView);
             this.Controls.Add(this.pnDetail);
             this.Controls.Add(this.lbPagination);
             this.Controls.Add(this.lvSp);
@@ -299,6 +329,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -308,6 +339,7 @@
             this.pnDetail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberSp)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -331,6 +363,8 @@
         private System.Windows.Forms.Label lbTenSp;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnChangeView;
+        private System.Windows.Forms.TextBox txtContent;
     }
 }
 
