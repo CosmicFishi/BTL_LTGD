@@ -1,6 +1,6 @@
 ﻿namespace btlon
 {
-    partial class Form2
+    partial class SignUp
     {
         /// <summary>
         /// Required designer variable.
@@ -262,7 +262,7 @@
             this.lbTitle.TabIndex = 8;
             this.lbTitle.Text = "Tạo Tài Khoản";
             // 
-            // Form2
+            // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -287,8 +287,10 @@
             this.Controls.Add(this.lbSĐT);
             this.Controls.Add(this.lbHoTen);
             this.Controls.Add(this.lbTitle);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.MaximizeBox = false;
+            this.Name = "SignUp";
+            this.Text = "Sign Up";
+            this.Load += new System.EventHandler(this.SignUp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
