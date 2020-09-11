@@ -141,42 +141,37 @@
             // 
             // txtbCfPassword
             // 
-            this.txtbCfPassword.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtbCfPassword.Location = new System.Drawing.Point(148, 237);
             this.txtbCfPassword.Name = "txtbCfPassword";
-            this.txtbCfPassword.Size = new System.Drawing.Size(248, 26);
+            this.txtbCfPassword.Size = new System.Drawing.Size(248, 20);
             this.txtbCfPassword.TabIndex = 19;
             // 
             // txtbPassword
             // 
-            this.txtbPassword.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtbPassword.Location = new System.Drawing.Point(148, 192);
             this.txtbPassword.Name = "txtbPassword";
-            this.txtbPassword.Size = new System.Drawing.Size(248, 26);
+            this.txtbPassword.Size = new System.Drawing.Size(248, 20);
             this.txtbPassword.TabIndex = 20;
             // 
             // txtbEmail
             // 
-            this.txtbEmail.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtbEmail.Location = new System.Drawing.Point(148, 151);
             this.txtbEmail.Name = "txtbEmail";
-            this.txtbEmail.Size = new System.Drawing.Size(248, 26);
+            this.txtbEmail.Size = new System.Drawing.Size(248, 20);
             this.txtbEmail.TabIndex = 18;
             // 
             // txtbSĐT
             // 
-            this.txtbSĐT.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtbSĐT.Location = new System.Drawing.Point(148, 117);
             this.txtbSĐT.Name = "txtbSĐT";
-            this.txtbSĐT.Size = new System.Drawing.Size(248, 26);
+            this.txtbSĐT.Size = new System.Drawing.Size(248, 20);
             this.txtbSĐT.TabIndex = 17;
             // 
             // txtbHoTen
             // 
-            this.txtbHoTen.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtbHoTen.Location = new System.Drawing.Point(148, 79);
             this.txtbHoTen.Name = "txtbHoTen";
-            this.txtbHoTen.Size = new System.Drawing.Size(248, 26);
+            this.txtbHoTen.Size = new System.Drawing.Size(248, 20);
             this.txtbHoTen.TabIndex = 16;
             // 
             // label5
