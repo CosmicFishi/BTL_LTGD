@@ -28,3 +28,15 @@ D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Properties.Resource
 D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csproj.GenerateResource.Cache
 D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.gioHang1.resources
 C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.gioHang1.resources
+D:\BTL_LTGD\btlon\btlon\bin\Debug\btlon.exe
+D:\BTL_LTGD\btlon\btlon\bin\Debug\btlon.pdb
+D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csprojAssemblyReference.cache
+D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Form1.resources
+D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Form2.resources
+D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.gioHang1.resources
+D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Login.resources
+D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Properties.Resources.resources
+D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csproj.GenerateResource.cache
+D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csproj.CoreCompileInputs.cache
+D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.exe
+D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.pdb
