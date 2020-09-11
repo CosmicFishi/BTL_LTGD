@@ -40,3 +40,4 @@ D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csproj.CoreCompileInputs.cache
 D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.exe
 D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.pdb
 D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.SignUp.resources
+C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.SignUp.resources

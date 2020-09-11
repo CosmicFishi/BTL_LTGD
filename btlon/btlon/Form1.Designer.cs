@@ -36,7 +36,6 @@
             this.picAvatar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lvSp = new System.Windows.Forms.ListView();
-            this.btnView = new System.Windows.Forms.Button();
             this.lbPagination = new System.Windows.Forms.Label();
             this.pnDetail = new System.Windows.Forms.Panel();
             this.btnAddCart = new System.Windows.Forms.Button();
@@ -67,7 +66,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.MinimumSize = new System.Drawing.Size(300, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 794);
+            this.panel1.Size = new System.Drawing.Size(300, 757);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -76,7 +75,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-1, 708);
+            this.label1.Location = new System.Drawing.Point(-1, 671);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(296, 46);
             this.label1.TabIndex = 2;
@@ -125,7 +124,7 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(301, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(867, 69);
+            this.panel2.Size = new System.Drawing.Size(797, 69);
             this.panel2.TabIndex = 4;
             // 
             // picAvatar
@@ -133,7 +132,7 @@
             this.picAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picAvatar.Image = global::btlon.Properties.Resources.OIP2MCJIFZB;
             this.picAvatar.InitialImage = null;
-            this.picAvatar.Location = new System.Drawing.Point(792, 12);
+            this.picAvatar.Location = new System.Drawing.Point(722, 12);
             this.picAvatar.Name = "picAvatar";
             this.picAvatar.Size = new System.Drawing.Size(53, 50);
             this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -144,7 +143,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::btlon.Properties.Resources._34627;
-            this.pictureBox1.Location = new System.Drawing.Point(730, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(660, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -157,27 +156,16 @@
             this.lvSp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvSp.BackColor = System.Drawing.Color.White;
+            this.lvSp.BackColor = System.Drawing.Color.LightCyan;
             this.lvSp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvSp.FullRowSelect = true;
             this.lvSp.Location = new System.Drawing.Point(301, 144);
             this.lvSp.Name = "lvSp";
-            this.lvSp.Size = new System.Drawing.Size(863, 529);
+            this.lvSp.Size = new System.Drawing.Size(793, 492);
             this.lvSp.TabIndex = 5;
             this.lvSp.TileSize = new System.Drawing.Size(500, 100);
             this.lvSp.UseCompatibleStateImageBehavior = false;
             this.lvSp.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvSp_ItemSelectionChanged);
-            // 
-            // btnView
-            // 
-            this.btnView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnView.Location = new System.Drawing.Point(1095, 74);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(50, 45);
-            this.btnView.TabIndex = 6;
-            this.btnView.Text = "LIST";
-            this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbPagination
             // 
@@ -202,17 +190,16 @@
             this.pnDetail.Controls.Add(this.lbTenSp);
             this.pnDetail.Controls.Add(this.label3);
             this.pnDetail.Controls.Add(this.label2);
-            this.pnDetail.Location = new System.Drawing.Point(301, 679);
+            this.pnDetail.Location = new System.Drawing.Point(301, 642);
             this.pnDetail.Name = "pnDetail";
-            this.pnDetail.Size = new System.Drawing.Size(867, 114);
+            this.pnDetail.Size = new System.Drawing.Size(797, 114);
             this.pnDetail.TabIndex = 9;
-            this.pnDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.pnDetail_Paint);
             // 
             // btnAddCart
             // 
             this.btnAddCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCart.Location = new System.Drawing.Point(438, 71);
+            this.btnAddCart.Location = new System.Drawing.Point(368, 71);
             this.btnAddCart.Name = "btnAddCart";
             this.btnAddCart.Size = new System.Drawing.Size(203, 31);
             this.btnAddCart.TabIndex = 15;
@@ -225,7 +212,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(442, 45);
+            this.label8.Location = new System.Drawing.Point(372, 45);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 18);
             this.label8.TabIndex = 14;
@@ -234,7 +221,7 @@
             // numberSp
             // 
             this.numberSp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numberSp.Location = new System.Drawing.Point(521, 44);
+            this.numberSp.Location = new System.Drawing.Point(451, 44);
             this.numberSp.Name = "numberSp";
             this.numberSp.Size = new System.Drawing.Size(120, 23);
             this.numberSp.TabIndex = 13;
@@ -294,7 +281,6 @@
             this.label2.Size = new System.Drawing.Size(148, 22);
             this.label2.TabIndex = 8;
             this.label2.Text = "Thông tin chi tiết:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1
             // 
@@ -302,10 +288,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1168, 794);
+            this.ClientSize = new System.Drawing.Size(1098, 757);
             this.Controls.Add(this.pnDetail);
             this.Controls.Add(this.lbPagination);
-            this.Controls.Add(this.btnView);
             this.Controls.Add(this.lvSp);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -333,7 +318,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox picAvatar;
         private System.Windows.Forms.ListView lvSp;
-        private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbPagination;
         private System.Windows.Forms.Label label4;
