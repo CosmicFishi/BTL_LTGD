@@ -155,6 +155,7 @@
             this.btLogin.TabIndex = 6;
             this.btLogin.Text = "Đăng Nhập";
             this.btLogin.UseVisualStyleBackColor = false;
+            this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
             this.btLogin.MouseLeave += new System.EventHandler(this.btLogin_MouseLeave);
             this.btLogin.MouseHover += new System.EventHandler(this.btLogin_MouseHover);
             // 
@@ -190,6 +191,7 @@
             this.linkLabel1.TabIndex = 10;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Đăng Ký";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Login
             // 

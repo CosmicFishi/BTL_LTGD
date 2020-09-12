@@ -99,5 +99,16 @@ namespace btlon
                 txtBoxPassword.PasswordChar = '\0';
             }    
         }
+
+        private void btLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SignUp sg = new SignUp();
+            sg.ShowDialog();
+        }
     }
 }

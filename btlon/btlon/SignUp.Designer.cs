@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btTaoTaiKhoan = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
             this.comboBoxNam = new System.Windows.Forms.ComboBox();
             this.comboBoxThang = new System.Windows.Forms.ComboBox();
             this.comboBoxNgay = new System.Windows.Forms.ComboBox();
@@ -48,6 +48,7 @@
             this.lbSĐT = new System.Windows.Forms.Label();
             this.lbHoTen = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
+            this.dateTimePickerNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btTaoTaiKhoan
@@ -56,7 +57,7 @@
             this.btTaoTaiKhoan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btTaoTaiKhoan.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btTaoTaiKhoan.ForeColor = System.Drawing.Color.Olive;
-            this.btTaoTaiKhoan.Location = new System.Drawing.Point(72, 388);
+            this.btTaoTaiKhoan.Location = new System.Drawing.Point(76, 407);
             this.btTaoTaiKhoan.Name = "btTaoTaiKhoan";
             this.btTaoTaiKhoan.Size = new System.Drawing.Size(248, 31);
             this.btTaoTaiKhoan.TabIndex = 27;
@@ -64,16 +65,17 @@
             this.btTaoTaiKhoan.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btTaoTaiKhoan.UseVisualStyleBackColor = false;
             // 
-            // checkBox1
+            // checkBoxShowPassword
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.checkBox1.Location = new System.Drawing.Point(11, 359);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(130, 23);
-            this.checkBox1.TabIndex = 26;
-            this.checkBox1.Text = "Hiện Mật Khẩu";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxShowPassword.AutoSize = true;
+            this.checkBoxShowPassword.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(11, 378);
+            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(130, 23);
+            this.checkBoxShowPassword.TabIndex = 26;
+            this.checkBoxShowPassword.Text = "Hiện Mật Khẩu";
+            this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPassword_CheckedChanged);
             // 
             // comboBoxNam
             // 
@@ -88,6 +90,7 @@
             this.comboBoxNam.Size = new System.Drawing.Size(83, 25);
             this.comboBoxNam.TabIndex = 25;
             this.comboBoxNam.Text = "Năm";
+            this.comboBoxNam.SelectedIndexChanged += new System.EventHandler(this.comboBoxNam_SelectedIndexChanged);
             // 
             // comboBoxThang
             // 
@@ -100,6 +103,7 @@
             this.comboBoxThang.Size = new System.Drawing.Size(83, 25);
             this.comboBoxThang.TabIndex = 24;
             this.comboBoxThang.Text = "Tháng";
+            this.comboBoxThang.SelectedIndexChanged += new System.EventHandler(this.comboBoxThang_SelectedIndexChanged);
             // 
             // comboBoxNgay
             // 
@@ -114,6 +118,7 @@
             this.comboBoxNgay.TabIndex = 23;
             this.comboBoxNgay.Text = "Ngày";
             this.comboBoxNgay.ValueMember = "none";
+            this.comboBoxNgay.SelectedIndexChanged += new System.EventHandler(this.comboBoxNgay_SelectedIndexChanged);
             // 
             // radioButtonNu
             // 
@@ -146,6 +151,8 @@
             this.txtbCfPassword.Name = "txtbCfPassword";
             this.txtbCfPassword.Size = new System.Drawing.Size(248, 26);
             this.txtbCfPassword.TabIndex = 19;
+            this.txtbCfPassword.Enter += new System.EventHandler(this.txtbCfPassword_Enter);
+            this.txtbCfPassword.Leave += new System.EventHandler(this.txtbCfPassword_Leave);
             // 
             // txtbPassword
             // 
@@ -154,6 +161,8 @@
             this.txtbPassword.Name = "txtbPassword";
             this.txtbPassword.Size = new System.Drawing.Size(248, 26);
             this.txtbPassword.TabIndex = 20;
+            this.txtbPassword.Enter += new System.EventHandler(this.txtbPassword_Enter);
+            this.txtbPassword.Leave += new System.EventHandler(this.txtbPassword_Leave);
             // 
             // txtbEmail
             // 
@@ -162,6 +171,8 @@
             this.txtbEmail.Name = "txtbEmail";
             this.txtbEmail.Size = new System.Drawing.Size(248, 26);
             this.txtbEmail.TabIndex = 18;
+            this.txtbEmail.Enter += new System.EventHandler(this.txtbEmail_Enter);
+            this.txtbEmail.Leave += new System.EventHandler(this.txtbEmail_Leave);
             // 
             // txtbSĐT
             // 
@@ -170,6 +181,8 @@
             this.txtbSĐT.Name = "txtbSĐT";
             this.txtbSĐT.Size = new System.Drawing.Size(248, 26);
             this.txtbSĐT.TabIndex = 17;
+            this.txtbSĐT.Enter += new System.EventHandler(this.txtbSĐT_Enter);
+            this.txtbSĐT.Leave += new System.EventHandler(this.txtbSĐT_Leave);
             // 
             // txtbHoTen
             // 
@@ -178,6 +191,8 @@
             this.txtbHoTen.Name = "txtbHoTen";
             this.txtbHoTen.Size = new System.Drawing.Size(248, 26);
             this.txtbHoTen.TabIndex = 16;
+            this.txtbHoTen.Enter += new System.EventHandler(this.txtbHoTen_Enter);
+            this.txtbHoTen.Leave += new System.EventHandler(this.txtbHoTen_Leave);
             // 
             // label5
             // 
@@ -267,13 +282,26 @@
             this.lbTitle.TabIndex = 8;
             this.lbTitle.Text = "Tạo Tài Khoản";
             // 
+            // dateTimePickerNgaySinh
+            // 
+            this.dateTimePickerNgaySinh.CalendarFont = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateTimePickerNgaySinh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(132, 356);
+            this.dateTimePickerNgaySinh.Name = "dateTimePickerNgaySinh";
+            this.dateTimePickerNgaySinh.Size = new System.Drawing.Size(166, 20);
+            this.dateTimePickerNgaySinh.TabIndex = 28;
+            this.dateTimePickerNgaySinh.TabStop = false;
+            this.dateTimePickerNgaySinh.Value = new System.DateTime(2020, 9, 12, 10, 3, 17, 0);
+            this.dateTimePickerNgaySinh.ValueChanged += new System.EventHandler(this.dateTimePickerNgaySinh_ValueChanged);
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 450);
+            this.ClientSize = new System.Drawing.Size(460, 450);
+            this.Controls.Add(this.dateTimePickerNgaySinh);
             this.Controls.Add(this.btTaoTaiKhoan);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxShowPassword);
             this.Controls.Add(this.comboBoxNam);
             this.Controls.Add(this.comboBoxThang);
             this.Controls.Add(this.comboBoxNgay);
@@ -294,6 +322,7 @@
             this.Controls.Add(this.lbTitle);
             this.MaximizeBox = false;
             this.Name = "SignUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Up";
             this.Load += new System.EventHandler(this.SignUp_Load);
             this.ResumeLayout(false);
@@ -304,7 +333,7 @@
         #endregion
 
         private System.Windows.Forms.Button btTaoTaiKhoan;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxShowPassword;
         private System.Windows.Forms.ComboBox comboBoxNam;
         private System.Windows.Forms.ComboBox comboBoxThang;
         private System.Windows.Forms.ComboBox comboBoxNgay;
@@ -323,5 +352,6 @@
         private System.Windows.Forms.Label lbSĐT;
         private System.Windows.Forms.Label lbHoTen;
         private System.Windows.Forms.Label lbTitle;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNgaySinh;
     }
 }
