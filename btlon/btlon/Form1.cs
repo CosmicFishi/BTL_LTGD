@@ -12,6 +12,11 @@ namespace btlon
 {
     public partial class Form1 : Form
     {
+        string gioithieu;
+        string baohanh;
+        string doitra;
+        string chamsockh;
+
         string[] h2 = { "Tài khoản", "Loại sản phẩm", "Giới thiệu", "Dịch vụ"};
         string[] category = { "Điện thoại máy tính bảng", "Điện tử điện lạnh","Phụ kiện thiết bị số", "Mẹ và bé"};
         string[] services = {"Dịch vụ đổi trả", "Dịch vụ bảo hành", "Dịch vụ chăm sóc KH"};
@@ -26,20 +31,6 @@ namespace btlon
         List<SanPham> dienTu = new List<SanPham>();
         List<SanPham> phuKien = new List<SanPham>();
         List<SanPham> meBe = new List<SanPham>();
-
-        void loadListSp(int id, List<SanPham> arr) {
-            string[] pathPic = Directory.GetFiles(Application.StartupPath + @"\" + id);
-        
-            for (int i = 0; i < pathPic.Length; i++)
-            {
-                string f = pathPic[i]; //f là file name khai báo để dùng cho ngắn gọn
-                SanPham a = new SanPham();
-                a.img = f;
-                a.ten = f.Substring(0, f.LastIndexOf("_")).Substring(1 + f.LastIndexOf(@"\"));
-                a.gia = f.Substring(0, f.LastIndexOf(".")).Substring(1 + f.LastIndexOf("_")) + "000";
-                arr.Add(a);
-            }
-        }
        
         public Form1()
         {
@@ -48,8 +39,7 @@ namespace btlon
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            lbGiaSp.Text = " ";
-            lbTenSp.Text = " ";
+            //load UI
             loadUser();
             loadMenu();
             loadSpByName(dienThoai);
@@ -57,21 +47,53 @@ namespace btlon
             loadListSp(2, dienTu);
             loadListSp(3, phuKien);
             loadListSp(4, meBe);
+            
+            //set default
+            lbGiaSp.Text = " ";
+            lbTenSp.Text = " ";
+            gioithieu = getFileContent("gioithieu.txt");
+            baohanh = getFileContent("baohanh.txt");
+            doitra = getFileContent("doitra.txt");
+            chamsockh = getFileContent("chamsockh.txt");
+            
+            //set UI default
+            tvMenu.SelectedNode = tvMenu.Nodes[1];
+            tvMenu.Nodes[1].Expand();
+        }
+
+        //---------------------Function---------------------
+        void loadListSp(int id, List<SanPham> arr)
+        {
+            string[] pathPic = Directory.GetFiles(Application.StartupPath + @"\" + id);
+
+            for (int i = 0; i < pathPic.Length; i++)
+            {
+                string f = pathPic[i];
+                SanPham a = new SanPham();
+                a.img = f;
+                a.ten = f.Substring(0, f.LastIndexOf("_")).Substring(1 + f.LastIndexOf(@"\"));
+                a.gia = f.Substring(0, f.LastIndexOf(".")).Substring(1 + f.LastIndexOf("_")) + "000";
+                arr.Add(a);
+            }
+        }
+
+        string getFileContent(string fileName) {
+            string path = Application.StartupPath+@"\"+fileName;
+            return File.ReadAllText(path);
         }
 
         void loadMenu()
         {
-            //hiển thị danh sách các node ở bậc 1 trong treeview
             Font fh2 = new Font("Microsoft Sans Serif", 14);
+            Font fh3 = new Font("Microsoft Sans Serif", 13);
+
+            //hiển thị danh sách các node ở bậc 1 trong treeview
             foreach(string s in h2)
                 tvMenu.Nodes.Add(new TreeNode() { Text = s, NodeFont = fh2});
 
             //hiển thị danh sách các node ở bậc 2 trong "Loại sản phẩm"
-            Font fh3 = new Font("Microsoft Sans Serif", 13);
             foreach(string s in category)
                 tvMenu.Nodes[1].Nodes.Add(new TreeNode() { Text = s, NodeFont = fh3 });
-            tvMenu.SelectedNode = tvMenu.Nodes[1];
-            tvMenu.Nodes[1].Expand();
            
             //hiển thị danh sách các node ở bậc 2 trong "Services"
             foreach (string s in services)
@@ -88,13 +110,17 @@ namespace btlon
         //load danh sách sản phẩm theo loại sản phẩm.
         void loadSpByName(List<SanPham> arr) {
             Font fh3 = new Font("Microsoft Sans Serif", 13);
+            
             lvSp.Clear();
+            lvSp.Visible = true;
+            txtContent.Visible = false;
+            pnDetail.Visible = true;
+
             ColumnHeader name = new ColumnHeader() { Text = "Hinh anh", Width = 200 };
             ColumnHeader price = new ColumnHeader() { Text = "Gia SP", Width = 100 };
-            lvSp.Columns.AddRange(new ColumnHeader[] { name, price });
-
             ImageList imageList = new ImageList() { ImageSize = new Size(150, 200) };
 
+            lvSp.Columns.AddRange(new ColumnHeader[] { name, price });
             lvSp.LargeImageList = imageList;
 
             for (int i = 0; i < arr.Count; i++)
@@ -107,21 +133,18 @@ namespace btlon
                 row.ImageKey = i.ToString();
                 lvSp.Items.Add(row);
             }   
-
-            //for (int i = 0; i < arr.Count; i++ )
-            //{
-            //    imageList.Images.Add(i.ToString(), Image.FromFile(arr[i].img));
-
-            //    ListViewItem row = new ListViewItem() { Text = "anh 1" };
-            //    ListViewItem.ListViewSubItem nameSP = new ListViewItem.ListViewSubItem() { Text = arr[i].ten };
-            //    ListViewItem.ListViewSubItem priceSp = new ListViewItem.ListViewSubItem() { Text = arr[i].gia };
-            //    row.SubItems.AddRange(new ListViewItem.ListViewSubItem[] {nameSP, priceSp});
-            //    row.ImageKey = i.ToString();
-                
-            //    lvSp.Items.Add(row);
-            //}   
         }
-       
+
+        void loadContent(string s)
+        {
+            lvSp.Visible = false;
+            pnDetail.Visible = false;
+            txtContent.Visible = true;
+            txtContent.Text = s;
+        }
+
+
+        //-----------------Event----------------------------
 
         private void lvSp_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
@@ -134,6 +157,7 @@ namespace btlon
             }
         }
 
+        //event value changed of numbericUpDown to show/hidden btn addToCart
         private void numberSp_ValueChanged(object sender, EventArgs e)
         {
             if (numberSp.Value == 0) btnAddCart.Enabled = false;
@@ -156,11 +180,24 @@ namespace btlon
                 case "Mẹ và bé":
                     loadSpByName(meBe);
                     break;
+                case "Giới thiệu":
+                    loadContent(gioithieu);
+                    break;
+                case "Dịch vụ bảo hành":
+                    loadContent(baohanh);
+                    break;
+                case "Dịch vụ chăm sóc KH":
+                    loadContent(chamsockh);
+                    break;
+                case "Dịch vụ đổi trả":
+                    loadContent(doitra);
+                    break;
                 default:
                     break;
             }
         }
-
+        
+        //click btn gio hang
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             gioHang1 g = new gioHang1();
@@ -172,6 +209,28 @@ namespace btlon
                 string text = lvSp.SelectedItems[0].Text;
                 MessageBox.Show(text);
             }
+        }
+
+        //change list view
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (lvSp.View != View.Tile)
+            {
+                lvSp.View = View.Tile;
+                lvSp.TileSize = new Size(700, 200);
+                btnChangeView.Text = "TILE";
+            }
+            else {
+                lvSp.View = View.LargeIcon;
+                btnChangeView.Text = "BIG";
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Ban co chac muon dong??", "Dong form", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                e.Cancel = true;
+           
         }
 
     }
