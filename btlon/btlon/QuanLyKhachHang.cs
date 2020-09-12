@@ -15,5 +15,24 @@ namespace btlon
         {
             InitializeComponent();
         }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeAdminPassword changePassword = new ChangeAdminPassword();
+            changePassword.ShowDialog();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login lg = new Login();
+            lg.ShowDialog();
+            this.Close();
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

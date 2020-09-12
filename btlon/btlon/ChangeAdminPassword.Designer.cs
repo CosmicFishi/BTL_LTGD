@@ -28,29 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxConfirmPassword = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Location = new System.Drawing.Point(181, 50);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(234, 30);
-            this.textBoxPassword.TabIndex = 0;
-            // 
             // textBoxConfirmPassword
             // 
-            this.textBoxConfirmPassword.Location = new System.Drawing.Point(181, 92);
+            this.textBoxConfirmPassword.Location = new System.Drawing.Point(181, 87);
             this.textBoxConfirmPassword.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
             this.textBoxConfirmPassword.Size = new System.Drawing.Size(234, 30);
             this.textBoxConfirmPassword.TabIndex = 0;
+            this.textBoxConfirmPassword.TextChanged += new System.EventHandler(this.textBoxConfirmPassword_TextChanged);
+            this.textBoxConfirmPassword.Leave += new System.EventHandler(this.textBoxConfirmPassword_Leave);
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Location = new System.Drawing.Point(181, 34);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(234, 30);
+            this.textBoxPassword.TabIndex = 0;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // lbPassword
             // 
@@ -100,8 +103,8 @@
             this.Controls.Add(this.checkBoxShowPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbPassword);
-            this.Controls.Add(this.textBoxConfirmPassword);
             this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.textBoxConfirmPassword);
             this.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -116,8 +119,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxConfirmPassword;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBoxShowPassword;

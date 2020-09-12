@@ -15,32 +15,61 @@ namespace btlon
         {
             InitializeComponent();
         }
-        public static void CheckPassword()
+        void CheckPassword()
         {
-
+            if (textBoxPassword.Text != textBoxConfirmPassword.Text)
+            {
+                MessageBox.Show("Mật Khẩu Chưa Khớp"); 
+            }
         }
         private void ChangeAdminPassword_Load(object sender, EventArgs e)
-        {
-            textBoxPassword.PasswordChar = '*';
+        {  
             textBoxConfirmPassword.PasswordChar = '*';
+            textBoxPassword.PasswordChar = '*';
             buttonConfirm.Enabled = false;
         }
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if(checkBoxShowPassword.Checked)
             {
-                textBoxConfirmPassword.PasswordChar = '\0';
                 textBoxPassword.PasswordChar = '\0';
+                textBoxConfirmPassword.PasswordChar = '\0';
             }    
             else
             {
-                textBoxConfirmPassword.PasswordChar = '*';
                 textBoxPassword.PasswordChar = '*';
-            }    
+                textBoxConfirmPassword.PasswordChar = '*';
+            }
+           
         }
-
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void textBoxConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+            if(textBoxConfirmPassword.Text==textBoxPassword.Text)
+            {
+                buttonConfirm.Enabled = true;
+            }
+            else
+            {
+                buttonConfirm.Enabled = false;
+            }
+        }
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+            if(textBoxConfirmPassword.Text!="")
+            {
+                buttonConfirm.Enabled = false;
+            }
+        }
+
+        private void textBoxConfirmPassword_Leave(object sender, EventArgs e)
+        {
+            CheckPassword();
         }
     }
 }

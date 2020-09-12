@@ -102,7 +102,10 @@ namespace btlon
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            QuanLyKhachHang qlkh = new QuanLyKhachHang();
+            qlkh.ShowDialog();
+            this.Close();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
