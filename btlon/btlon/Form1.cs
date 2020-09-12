@@ -32,6 +32,17 @@ namespace btlon
         List<SanPham> phuKien = new List<SanPham>();
         List<SanPham> meBe = new List<SanPham>();
        
+        //check open forms
+        private bool checkFormOpen(String formName) {
+            bool open = false;
+            FormCollection fc = Application.OpenForms;
+            foreach (Form f in fc) {
+                if (f.Name == formName)
+                    open = true;
+            }
+            return open;
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -201,7 +212,7 @@ namespace btlon
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             gioHang1 g = new gioHang1();
-            g.Show();
+            g.ShowDialog();
         }
 
         private void btnAddCart_Click(object sender, EventArgs e){

@@ -73,12 +73,19 @@ namespace btlon
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-
+            if (listView1.SelectedItems.Count > 0)
+                listView1.Items.Remove(listView1.SelectedItems[0]);
         }
 
         private void listView1_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             tinhTongTien();
+        }
+
+        private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
         }
     }
 }
