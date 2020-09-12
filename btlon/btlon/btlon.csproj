@@ -61,11 +61,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeAdminPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeAdminPassword.Designer.cs">
+      <DependentUpon>ChangeAdminPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyKhachHang.Designer.cs">
+      <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
@@ -88,8 +100,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChangeAdminPassword.resx">
+      <DependentUpon>ChangeAdminPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyKhachHang.resx">
+      <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
