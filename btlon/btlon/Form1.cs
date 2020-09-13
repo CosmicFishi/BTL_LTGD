@@ -51,7 +51,6 @@ namespace btlon
         private void Form1_Load(object sender, EventArgs e)
         {
             //load UI
-            loadUser();
             loadMenu();
             loadSpByName(dienThoai);
             loadListSp(1, dienThoai);
@@ -72,6 +71,11 @@ namespace btlon
             tvMenu.Nodes[1].Expand();
         }
 
+        public void getProp(string name){
+            if (name == "")
+                lbAccount.Text = "Nope Account";
+            else lbAccount.Text = name;
+        }
         //---------------------Function---------------------
         void loadListSp(int id, List<SanPham> arr)
         {
@@ -109,13 +113,6 @@ namespace btlon
             //hiển thị danh sách các node ở bậc 2 trong "Services"
             foreach (string s in services)
                 tvMenu.Nodes[2].Nodes.Add(new TreeNode() { Text = s, NodeFont = fh3 });
-        }
-
-        //đổi icon người dùng thành hình tròn.
-        void loadUser(){
-            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-            path.AddEllipse(0, 0, picAvatar.Width, picAvatar.Height);
-            picAvatar.Region = new Region(path);
         }
 
         //load danh sách sản phẩm theo loại sản phẩm.
