@@ -16,7 +16,16 @@ namespace btlon
         {
             InitializeComponent();
         }
-
+        public Boolean checkEmail()
+        {
+            String s = txtbEmail.Text;
+            int id = s.IndexOf("@gmail.com");
+            if(id==-1)
+            {
+                return false;
+            }    
+            return true;
+        }
         private void SignUp_Load(object sender, EventArgs e)
         {
             for (int i = 1; i <= 12; i++)
@@ -42,7 +51,9 @@ namespace btlon
             txtbPassword.ForeColor = SystemColors.ControlDark;
             txtbCfPassword.Text = "Xác Nhận Lại Mật Khẩu";
             txtbCfPassword.ForeColor = SystemColors.ControlDark;
-
+            btTaoTaiKhoan.Enabled = false;
+            btTaoTaiKhoan.ForeColor = Color.DarkGray;
+            btTaoTaiKhoan.BackColor = Color.Gray;
         }
 
         private void dateTimePickerNgaySinh_ValueChanged(object sender, EventArgs e)
@@ -54,6 +65,8 @@ namespace btlon
 
         private void comboBoxNgay_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int ngay = int.Parse(comboBoxNgay.Text);
+            dateTimePickerNgaySinh.Value = new DateTime(2000,2,ngay);
         }
 
         private void comboBoxThang_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,6 +126,17 @@ namespace btlon
 
         private void txtbEmail_Leave(object sender, EventArgs e)
         {
+            if(checkEmail() == false)
+            {
+                btTaoTaiKhoan.Enabled = false;
+                MessageBox.Show("Sai Định Dạng Email \r\n abc.@gmail.com hoặc abc.@gmail.com.vn");
+            }    
+            else
+            {
+                btTaoTaiKhoan.Enabled = true;
+                btTaoTaiKhoan.ForeColor = Color.Red;
+                btTaoTaiKhoan.BackColor = Color.Yellow;
+            }
             if(txtbEmail.Text=="")
             {
                 txtbEmail.Text = "Nhập Email";
@@ -176,6 +200,20 @@ namespace btlon
                 txtbCfPassword.PasswordChar = '\0';
 
             }    
+        }
+
+        private void radioButtonNam_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void btTaoTaiKhoan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePickerNgaySinh_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

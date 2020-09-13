@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btTaoTaiKhoan = new System.Windows.Forms.Button();
             this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
             this.comboBoxNam = new System.Windows.Forms.ComboBox();
@@ -49,6 +50,8 @@
             this.lbHoTen = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
             this.dateTimePickerNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // btTaoTaiKhoan
@@ -64,6 +67,7 @@
             this.btTaoTaiKhoan.Text = "Tạo Tài Khoản";
             this.btTaoTaiKhoan.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btTaoTaiKhoan.UseVisualStyleBackColor = false;
+            this.btTaoTaiKhoan.Click += new System.EventHandler(this.btTaoTaiKhoan_Click);
             // 
             // checkBoxShowPassword
             // 
@@ -143,6 +147,7 @@
             this.radioButtonNam.TabStop = true;
             this.radioButtonNam.Text = "Nam";
             this.radioButtonNam.UseVisualStyleBackColor = true;
+            this.radioButtonNam.CheckedChanged += new System.EventHandler(this.radioButtonNam_CheckedChanged);
             // 
             // txtbCfPassword
             // 
@@ -293,6 +298,11 @@
             this.dateTimePickerNgaySinh.TabStop = false;
             this.dateTimePickerNgaySinh.Value = new System.DateTime(2020, 9, 12, 10, 3, 17, 0);
             this.dateTimePickerNgaySinh.ValueChanged += new System.EventHandler(this.dateTimePickerNgaySinh_ValueChanged);
+            this.dateTimePickerNgaySinh.Enter += new System.EventHandler(this.dateTimePickerNgaySinh_Enter);
+            // 
+            // error
+            // 
+            this.error.ContainerControl = this;
             // 
             // SignUp
             // 
@@ -325,6 +335,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Up";
             this.Load += new System.EventHandler(this.SignUp_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,5 +364,6 @@
         private System.Windows.Forms.Label lbHoTen;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgaySinh;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }
