@@ -17,7 +17,7 @@ namespace btlon
         string doitra;
         string chamsockh;
 
-        string[] h2 = { "Tài khoản", "Loại sản phẩm", "Giới thiệu", "Dịch vụ"};
+        string[] h2 = { "Loại sản phẩm", "Giới thiệu", "Dịch vụ"};
         string[] category = { "Điện thoại máy tính bảng", "Điện tử điện lạnh","Phụ kiện thiết bị số", "Mẹ và bé"};
         string[] services = {"Dịch vụ đổi trả", "Dịch vụ bảo hành", "Dịch vụ chăm sóc KH"};
       
@@ -68,7 +68,7 @@ namespace btlon
             chamsockh = getFileContent("chamsockh.txt");
             
             //set UI default
-            tvMenu.SelectedNode = tvMenu.Nodes[1];
+            //tvMenu.SelectedNode = tvMenu.Nodes[0].Nodes[0];
             tvMenu.Nodes[1].Expand();
         }
 
@@ -104,11 +104,11 @@ namespace btlon
 
             //hiển thị danh sách các node ở bậc 2 trong "Loại sản phẩm"
             foreach(string s in category)
-                tvMenu.Nodes[1].Nodes.Add(new TreeNode() { Text = s, NodeFont = fh3 });
+                tvMenu.Nodes[0].Nodes.Add(new TreeNode() { Text = s, NodeFont = fh3 });
            
             //hiển thị danh sách các node ở bậc 2 trong "Services"
             foreach (string s in services)
-                tvMenu.Nodes[3].Nodes.Add(new TreeNode() { Text = s, NodeFont = fh3 });
+                tvMenu.Nodes[2].Nodes.Add(new TreeNode() { Text = s, NodeFont = fh3 });
         }
 
         //đổi icon người dùng thành hình tròn.

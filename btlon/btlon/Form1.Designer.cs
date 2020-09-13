@@ -167,7 +167,6 @@
             this.lvSp.TabIndex = 5;
             this.lvSp.TileSize = new System.Drawing.Size(500, 200);
             this.lvSp.UseCompatibleStateImageBehavior = false;
-            this.lvSp.View = System.Windows.Forms.View.Tile;
             this.lvSp.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvSp_ItemSelectionChanged);
             // 
             // lbPagination
