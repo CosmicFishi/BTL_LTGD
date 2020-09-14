@@ -17,16 +17,18 @@ namespace btlon
         {
             InitializeComponent();
         }
-        SqlConnection conn;
-        SqlCommandBuilder cmmd;
+        DateTime dt;
+       SqlConnection conn;
+        SqlCommandBuilder cmmbd;
         SqlDataAdapter dtad;
         DataTable dttb;
+        String gt = ""; // giới tính
         String string_conn = @"Data Source=MAYTINH-B85D1NU\SQLEXPRESS;Initial Catalog=QuanLyKhachHang;Integrated Security=True";
         public String taoID()
         {
            String qr = "Select * from KhachHang";
             dtad = new SqlDataAdapter(qr, conn);
-            cmmd = new SqlCommandBuilder(dtad);
+            cmmbd = new SqlCommandBuilder(dtad);
             dttb = new DataTable();
             dtad.Fill(dttb);
             dataGridView1.DataSource = dttb;
@@ -37,9 +39,9 @@ namespace btlon
         }
         public void Loaddata()
         {
-            String qr = "Select * from KhachHang";
+            String qr = "SELECT*FROM[dbo].[KhachHang]";
             dtad = new SqlDataAdapter(qr, conn);
-            cmmd = new SqlCommandBuilder(dtad);
+            cmmbd = new SqlCommandBuilder(dtad);
             dttb = new DataTable();
             dtad.Fill(dttb);
             dataGridView1.DataSource = dttb;
@@ -63,22 +65,93 @@ namespace btlon
             this.Close();
         }
 
-        private void tìmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void QuanLyKhachHang_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(string_conn);
             conn.Open();
             Loaddata();
-            MessageBox.Show(taoID());
         }
 
         private void QuanLyKhachHang_FormClosed(object sender, FormClosedEventArgs e)
         {
             conn.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridView1.Rows.Count>1)
+            {
+                int i;
+                i = dataGridView1.CurrentRow.Index;
+                textBoxEmail.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                txtbHoTen.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                textBoxSDT.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                textBoxDc.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                gt = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                textBoxPassword.Text = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                dateTimePickerNgaySinh.Text = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                if (gt.IndexOf("Nam") > -1)
+                {
+                    radioButtonNam.Checked = true;
+                }
+                else
+                {
+                    radioButtonNu.Checked = true;
+                }
+            }    
+            
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            String delete_String = "delete from KhachHang where Email='"+textBoxEmail.Text+"'";
+            try
+            {
+                SqlCommand cmmd = new SqlCommand(delete_String, conn);
+                cmmd.ExecuteNonQuery();
+                Loaddata();
+                MessageBox.Show("Xóa Thành Công");
+            }
+            catch (SqlException err)
+            {
+
+                MessageBox.Show(err.ToString());
+            }
+            
+        }
+
+        private void btCapNhat_Click(object sender, EventArgs e)
+        {
+            dt = dateTimePickerNgaySinh.Value;
+            try
+            {
+                String update_String = "UPDATE [dbo].[KhachHang] SET hoTen='"+txtbHoTen.Text +"',Sdt ='"+textBoxSDT.Text+"',DiaChi ='"+textBoxDc.Text+"',gioiTinh ='"+gt+"' ,ngaySinh ='"+dt.ToString("dd/MM/yyyy")+"' ,password = '"+textBoxPassword.Text+"' where Email='"+textBoxEmail.Text+"';";
+                SqlCommand cmmd = new SqlCommand(update_String, conn);
+                cmmd.ExecuteNonQuery();
+                Loaddata();
+            }
+            catch (SqlException err)
+            {
+
+                MessageBox.Show(err.ToString());
+            }
+        }
+
+        private void radioButtonNam_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if(radioButtonNam.Checked)
+            {
+                gt = "Nam";
+            } 
+            else
+            {
+                gt = "Nữ";
+            }    
+        }
+
+        private void dateTimePickerNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
         }
     }
 }
