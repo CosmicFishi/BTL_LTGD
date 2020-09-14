@@ -35,7 +35,6 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btCapNhat = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
-            this.btThem = new System.Windows.Forms.Button();
             this.btTimKiem = new System.Windows.Forms.Button();
             this.dateTimePickerNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,8 +44,9 @@
             this.txtbHoTen = new System.Windows.Forms.TextBox();
             this.lbHoTen = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBoxDiaChi = new System.Windows.Forms.TextBox();
-            this.lbDiaChi = new System.Windows.Forms.Label();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.lbPassword = new System.Windows.Forms.Label();
+            this.btThem = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -109,15 +109,6 @@
             this.btXoa.TabIndex = 1;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
-            // 
-            // btThem
-            // 
-            this.btThem.Location = new System.Drawing.Point(51, 159);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(130, 30);
-            this.btThem.TabIndex = 1;
-            this.btThem.Text = "Thêm";
-            this.btThem.UseVisualStyleBackColor = true;
             // 
             // btTimKiem
             // 
@@ -215,32 +206,41 @@
             this.dataGridView1.Size = new System.Drawing.Size(801, 270);
             this.dataGridView1.TabIndex = 36;
             // 
-            // textBoxDiaChi
+            // textBoxPassword
             // 
-            this.textBoxDiaChi.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDiaChi.Location = new System.Drawing.Point(427, 24);
-            this.textBoxDiaChi.Name = "textBoxDiaChi";
-            this.textBoxDiaChi.Size = new System.Drawing.Size(248, 26);
-            this.textBoxDiaChi.TabIndex = 38;
+            this.textBoxPassword.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(427, 24);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(248, 26);
+            this.textBoxPassword.TabIndex = 38;
             // 
-            // lbDiaChi
+            // lbPassword
             // 
-            this.lbDiaChi.AutoSize = true;
-            this.lbDiaChi.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbDiaChi.Location = new System.Drawing.Point(363, 28);
-            this.lbDiaChi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbDiaChi.Name = "lbDiaChi";
-            this.lbDiaChi.Size = new System.Drawing.Size(58, 17);
-            this.lbDiaChi.TabIndex = 37;
-            this.lbDiaChi.Text = "Địa Chỉ";
+            this.lbPassword.AutoSize = true;
+            this.lbPassword.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbPassword.Location = new System.Drawing.Point(344, 28);
+            this.lbPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPassword.Name = "lbPassword";
+            this.lbPassword.Size = new System.Drawing.Size(76, 17);
+            this.lbPassword.TabIndex = 37;
+            this.lbPassword.Text = "Password";
+            // 
+            // btThem
+            // 
+            this.btThem.Location = new System.Drawing.Point(51, 159);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(130, 30);
+            this.btThem.TabIndex = 1;
+            this.btThem.Text = "Thêm";
+            this.btThem.UseVisualStyleBackColor = true;
             // 
             // QuanLyKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 513);
-            this.Controls.Add(this.textBoxDiaChi);
-            this.Controls.Add(this.lbDiaChi);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtbHoTen);
             this.Controls.Add(this.lbHoTen);
@@ -275,7 +275,6 @@
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.Button btCapNhat;
         private System.Windows.Forms.Button btXoa;
-        private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Button btTimKiem;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgaySinh;
         private System.Windows.Forms.Label label5;
@@ -285,7 +284,8 @@
         private System.Windows.Forms.TextBox txtbHoTen;
         private System.Windows.Forms.Label lbHoTen;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBoxDiaChi;
-        private System.Windows.Forms.Label lbDiaChi;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Label lbPassword;
+        private System.Windows.Forms.Button btThem;
     }
 }
