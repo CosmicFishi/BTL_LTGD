@@ -34,13 +34,14 @@
             this.lbTen = new System.Windows.Forms.Label();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.colPicture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbTongTien = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.TTKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -71,9 +72,9 @@
             this.lbSoTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSoTK.Location = new System.Drawing.Point(209, 61);
             this.lbSoTK.Name = "lbSoTK";
-            this.lbSoTK.Size = new System.Drawing.Size(91, 17);
+            this.lbSoTK.Size = new System.Drawing.Size(95, 17);
             this.lbSoTK.TabIndex = 0;
-            this.lbSoTK.Text = "Số tài khoản:";
+            this.lbSoTK.Text = "Số điện thoại:";
             // 
             // lbTen
             // 
@@ -98,13 +99,11 @@
             // listView1
             // 
             this.listView1.BackColor = System.Drawing.Color.White;
-            this.listView1.CheckBoxes = true;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colPicture,
             this.colName,
             this.colAmount,
-            this.colPrice});
-            this.listView1.HoverSelection = true;
+            this.colPrice,
+            this.columnHeader1});
             this.listView1.Location = new System.Drawing.Point(15, 121);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(521, 311);
@@ -113,17 +112,12 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listView1_ColumnWidthChanging);
-            this.listView1.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.listView1_ItemChecked);
-            // 
-            // colPicture
-            // 
-            this.colPicture.Text = "Picture";
-            this.colPicture.Width = 154;
+            this.listView1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listView1_ItemCheck);
             // 
             // colName
             // 
             this.colName.Text = "Tên";
-            this.colName.Width = 136;
+            this.colName.Width = 119;
             // 
             // colAmount
             // 
@@ -132,15 +126,20 @@
             // 
             // colPrice
             // 
-            this.colPrice.Text = "Giá";
-            this.colPrice.Width = 125;
+            this.colPrice.Text = "Đơn Giá";
+            this.colPrice.Width = 124;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Giá";
+            this.columnHeader1.Width = 200;
             // 
             // lbTongTien
             // 
             this.lbTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTongTien.Location = new System.Drawing.Point(110, 446);
             this.lbTongTien.Name = "lbTongTien";
-            this.lbTongTien.Size = new System.Drawing.Size(189, 32);
+            this.lbTongTien.Size = new System.Drawing.Size(136, 32);
             this.lbTongTien.TabIndex = 4;
             this.lbTongTien.Text = ".";
             this.lbTongTien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,6 +164,16 @@
             this.label1.Text = "Tổng tiền:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(252, 445);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(63, 36);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Clear";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnThanhToan_Click);
+            // 
             // gioHang1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +184,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbTongTien);
             this.Controls.Add(this.listView1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.TTKH);
@@ -200,12 +210,13 @@
         private System.Windows.Forms.Label lbTen;
         private System.Windows.Forms.Label lbSoTK;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader colPicture;
         private System.Windows.Forms.ColumnHeader colName;
         private System.Windows.Forms.ColumnHeader colAmount;
         private System.Windows.Forms.Label lbTongTien;
         private System.Windows.Forms.ColumnHeader colPrice;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

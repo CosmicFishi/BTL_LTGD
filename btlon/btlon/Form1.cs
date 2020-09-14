@@ -12,6 +12,8 @@ namespace btlon
 {
     public partial class Form1 : Form
     {
+        private gioHang1 gh = new gioHang1(); 
+
         string gioithieu;
         string baohanh;
         string doitra;
@@ -20,7 +22,7 @@ namespace btlon
         string[] h2 = { "Loại sản phẩm", "Giới thiệu", "Dịch vụ"};
         string[] category = { "Điện thoại máy tính bảng", "Điện tử điện lạnh","Phụ kiện thiết bị số", "Mẹ và bé"};
         string[] services = {"Dịch vụ đổi trả", "Dịch vụ bảo hành", "Dịch vụ chăm sóc KH"};
-      
+
         struct SanPham {
             public string img;
             public string ten;
@@ -45,6 +47,11 @@ namespace btlon
 
         public Form1()
         {
+            InitializeComponent();
+        }
+
+        public Form1(Form callingForm) {
+            gh = callingForm as gioHang1;
             InitializeComponent();
         }
 
@@ -80,14 +87,16 @@ namespace btlon
         void loadListSp(int id, List<SanPham> arr)
         {
             string[] pathPic = Directory.GetFiles(Application.StartupPath + @"\" + id);
+            //MessageBox.Show(Application.StartupPath);
 
             for (int i = 0; i < pathPic.Length; i++)
             {
+                //MessageBox.Show(pathPic[i].ToString());
                 string f = pathPic[i];
                 SanPham a = new SanPham();
                 a.img = f;
                 a.ten = f.Substring(0, f.LastIndexOf("_")).Substring(1 + f.LastIndexOf(@"\"));
-                a.gia = f.Substring(0, f.LastIndexOf(".")).Substring(1 + f.LastIndexOf("_")) + "000";
+                a.gia = f.Substring(0, f.LastIndexOf(".")).Substring(1 + f.LastIndexOf("_")) +"000";
                 arr.Add(a);
             }
         }
@@ -117,6 +126,7 @@ namespace btlon
 
         //load danh sách sản phẩm theo loại sản phẩm.
         void loadSpByName(List<SanPham> arr) {
+
             Font fh3 = new Font("Microsoft Sans Serif", 13);
             
             lvSp.Clear();
@@ -134,11 +144,14 @@ namespace btlon
             for (int i = 0; i < arr.Count; i++)
             {
                 imageList.Images.Add(i.ToString(), Image.FromFile(arr[i].img));
+                //MessageBox.Show(arr[i].img);
+                
 
                 ListViewItem row = new ListViewItem() { Text = arr[i].ten };
                 ListViewItem.ListViewSubItem priceSp = new ListViewItem.ListViewSubItem() { Text = arr[i].gia };
                 row.SubItems.Add(priceSp);
                 row.ImageKey = i.ToString();
+                //MessageBox.Show(row.ImageKey);
                 lvSp.Items.Add(row);
             }   
         }
@@ -172,8 +185,11 @@ namespace btlon
             else btnAddCart.Enabled = true;
         }
 
+
+
         private void tvMenu_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            
             switch (e.Node.Text)
             {
                 case "Điện thoại máy tính bảng":
@@ -208,14 +224,22 @@ namespace btlon
         //click btn gio hang
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            gioHang1 g = new gioHang1();
-            g.ShowDialog();
+            gh.ShowDialog();
         }
 
         private void btnAddCart_Click(object sender, EventArgs e){
             if (lvSp.SelectedItems.Count > 0) {
-                string text = lvSp.SelectedItems[0].Text;
-                MessageBox.Show(text);
+                
+                string ten = lvSp.SelectedItems[0].SubItems[0].Text;
+                string gia = lvSp.SelectedItems[0].SubItems[1].Text;
+                string sl = numberSp.Value.ToString();
+                string TG = (int.Parse(gia) * int.Parse(sl)).ToString();
+
+                string[] s = new string[] {ten,sl,gia,TG};
+
+                gh.taoDongTTHangHoa(s);
+
+                MessageBox.Show("Đã thêm", "Thêm sản phẩm",MessageBoxButtons.OK);
             }
         }
 
