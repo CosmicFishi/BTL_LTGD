@@ -37,8 +37,6 @@
             this.btXoa = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.btTimKiem = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbTimKiem = new System.Windows.Forms.Label();
             this.dateTimePickerNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.radioButtonNu = new System.Windows.Forms.RadioButton();
@@ -47,6 +45,8 @@
             this.txtbHoTen = new System.Windows.Forms.TextBox();
             this.lbHoTen = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBoxDiaChi = new System.Windows.Forms.TextBox();
+            this.lbDiaChi = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -128,24 +128,6 @@
             this.btTimKiem.Text = "Tìm Kiếm";
             this.btTimKiem.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(533, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // lbTimKiem
-            // 
-            this.lbTimKiem.AutoSize = true;
-            this.lbTimKiem.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTimKiem.Location = new System.Drawing.Point(393, 28);
-            this.lbTimKiem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTimKiem.Name = "lbTimKiem";
-            this.lbTimKiem.Size = new System.Drawing.Size(75, 17);
-            this.lbTimKiem.TabIndex = 16;
-            this.lbTimKiem.Text = "Tìm Kiếm";
-            // 
             // dateTimePickerNgaySinh
             // 
             this.dateTimePickerNgaySinh.CalendarFont = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -176,13 +158,13 @@
             this.radioButtonNu.Name = "radioButtonNu";
             this.radioButtonNu.Size = new System.Drawing.Size(48, 23);
             this.radioButtonNu.TabIndex = 33;
-            this.radioButtonNu.TabStop = true;
             this.radioButtonNu.Text = "Nữ";
             this.radioButtonNu.UseVisualStyleBackColor = true;
             // 
             // radioButtonNam
             // 
             this.radioButtonNam.AutoSize = true;
+            this.radioButtonNam.Checked = true;
             this.radioButtonNam.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.radioButtonNam.Location = new System.Drawing.Point(148, 108);
             this.radioButtonNam.Name = "radioButtonNam";
@@ -233,11 +215,32 @@
             this.dataGridView1.Size = new System.Drawing.Size(801, 270);
             this.dataGridView1.TabIndex = 36;
             // 
+            // textBoxDiaChi
+            // 
+            this.textBoxDiaChi.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDiaChi.Location = new System.Drawing.Point(427, 24);
+            this.textBoxDiaChi.Name = "textBoxDiaChi";
+            this.textBoxDiaChi.Size = new System.Drawing.Size(248, 26);
+            this.textBoxDiaChi.TabIndex = 38;
+            // 
+            // lbDiaChi
+            // 
+            this.lbDiaChi.AutoSize = true;
+            this.lbDiaChi.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbDiaChi.Location = new System.Drawing.Point(363, 28);
+            this.lbDiaChi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDiaChi.Name = "lbDiaChi";
+            this.lbDiaChi.Size = new System.Drawing.Size(58, 17);
+            this.lbDiaChi.TabIndex = 37;
+            this.lbDiaChi.Text = "Địa Chỉ";
+            // 
             // QuanLyKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 513);
+            this.Controls.Add(this.textBoxDiaChi);
+            this.Controls.Add(this.lbDiaChi);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtbHoTen);
             this.Controls.Add(this.lbHoTen);
@@ -246,8 +249,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePickerNgaySinh);
-            this.Controls.Add(this.lbTimKiem);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.btTimKiem);
@@ -276,8 +277,6 @@
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Button btTimKiem;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lbTimKiem;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgaySinh;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton radioButtonNu;
@@ -286,5 +285,7 @@
         private System.Windows.Forms.TextBox txtbHoTen;
         private System.Windows.Forms.Label lbHoTen;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBoxDiaChi;
+        private System.Windows.Forms.Label lbDiaChi;
     }
 }

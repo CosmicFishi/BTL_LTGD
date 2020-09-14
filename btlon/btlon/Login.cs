@@ -15,6 +15,14 @@ namespace btlon
         {
             InitializeComponent();
         }
+        public Boolean checkAccountAdmin()
+        {
+           if(txtBoxAccount.Text.IndexOf("Admin")>-1)
+            {
+                return true;
+            }
+            return false;
+        }
         private void txtBoxAccount_TextChanged(object sender, EventArgs e)
         {
         }
@@ -102,10 +110,22 @@ namespace btlon
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            QuanLyKhachHang qlkh = new QuanLyKhachHang();
-            qlkh.ShowDialog();
-            this.Close();
+            if(checkAccountAdmin()==true)
+            {
+                this.Hide();
+                QuanLyKhachHang qlkh = new QuanLyKhachHang();
+                qlkh.ShowDialog();
+                this.Close();
+            }    
+            else
+            {
+
+                this.Hide();
+                Form1 f = new Form1();
+                f.ShowDialog();
+                this.Close();
+            }    
+           
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
