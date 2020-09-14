@@ -48,3 +48,4 @@ C:\Users\Admin\Desktop\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.QuanLyKhachHang.
 D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.ChangeAdminPassword.resources
 D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.QuanLyKhachHang.resources
 D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.SignUp.resources
+D:\BTL_LTGD\btlon\btlon\bin\Debug\btlon.exe.config
