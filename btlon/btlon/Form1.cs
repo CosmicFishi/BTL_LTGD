@@ -12,8 +12,10 @@ namespace btlon
 {
     public partial class Form1 : Form
     {
-        private gioHang1 gh = new gioHang1(); 
+        private gioHang1 gh = new gioHang1();
 
+        string tenTK = "nope";
+        int soDT = 0;
         string gioithieu;
         string baohanh;
         string doitra;
@@ -78,10 +80,12 @@ namespace btlon
             tvMenu.Nodes[1].Expand();
         }
 
-        public void getProp(string name){
-            if (name == "")
+        public void getProp(string ten, int sdt){
+            tenTK = ten;
+            soDT = sdt;
+            if (tenTK == "")
                 lbAccount.Text = "Nope Account";
-            else lbAccount.Text = name;
+            else lbAccount.Text = tenTK;
         }
         //---------------------Function---------------------
         void loadListSp(int id, List<SanPham> arr)
@@ -166,7 +170,6 @@ namespace btlon
 
 
         //-----------------Event----------------------------
-
         private void lvSp_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             if (lvSp.SelectedItems.Count == 0)
@@ -224,6 +227,8 @@ namespace btlon
         //click btn gio hang
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            gh.TenTK = lbAccount.Text;
+            gh.SDT = soDT.ToString();
             gh.ShowDialog();
         }
 
@@ -238,8 +243,9 @@ namespace btlon
                 string[] s = new string[] {ten,sl,gia,TG};
 
                 gh.taoDongTTHangHoa(s);
+                lbThem.Visible = true;
 
-                MessageBox.Show("Đã thêm", "Thêm sản phẩm",MessageBoxButtons.OK);
+                //MessageBox.Show("Đã thêm", "Thêm sản phẩm");
             }
         }
 
@@ -263,6 +269,11 @@ namespace btlon
             if (MessageBox.Show("Ban co chac muon dong??", "Dong form", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 e.Cancel = true;
            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbThem.Visible = false;
         }
 
     }

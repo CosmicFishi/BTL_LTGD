@@ -215,5 +215,27 @@ namespace btlon
         {
 
         }
+
+        private void txtbHoTen_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void txtbHoTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) == true) {
+                e.Handled = true;
+                MessageBox.Show("chi duoc nhap chu so");
+            }
+        }
+
+        private void txtbSĐT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) == true)
+            {
+                e.Handled = true;
+                MessageBox.Show("chi duoc nhap chu so");
+            }
+        }
     }
 }

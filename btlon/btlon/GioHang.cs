@@ -56,8 +56,8 @@ namespace btlon
         private void GioHang_Load(object sender, EventArgs e)
         {
             //MessageBox.Show("running");
-            lbTen.Text += tenTK;
-            lbSoTK.Text += soDT;
+            lbTen.Text = tenTK;
+            lbSoTK.Text = soDT;
             tinhTongTien();
 
             //MessageBox.Show(listView1.Items[1].SubItems[3].Text.ToString());

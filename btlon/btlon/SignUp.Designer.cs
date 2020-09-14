@@ -139,6 +139,7 @@
             // radioButtonNam
             // 
             this.radioButtonNam.AutoSize = true;
+            this.radioButtonNam.Checked = true;
             this.radioButtonNam.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.radioButtonNam.Location = new System.Drawing.Point(146, 287);
             this.radioButtonNam.Name = "radioButtonNam";
@@ -187,6 +188,7 @@
             this.txtbSĐT.Size = new System.Drawing.Size(248, 26);
             this.txtbSĐT.TabIndex = 17;
             this.txtbSĐT.Enter += new System.EventHandler(this.txtbSĐT_Enter);
+            this.txtbSĐT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbSĐT_KeyPress);
             this.txtbSĐT.Leave += new System.EventHandler(this.txtbSĐT_Leave);
             // 
             // txtbHoTen
@@ -196,7 +198,9 @@
             this.txtbHoTen.Name = "txtbHoTen";
             this.txtbHoTen.Size = new System.Drawing.Size(248, 26);
             this.txtbHoTen.TabIndex = 16;
+            this.txtbHoTen.TextChanged += new System.EventHandler(this.txtbHoTen_TextChanged);
             this.txtbHoTen.Enter += new System.EventHandler(this.txtbHoTen_Enter);
+            this.txtbHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbHoTen_KeyPress);
             this.txtbHoTen.Leave += new System.EventHandler(this.txtbHoTen_Leave);
             // 
             // label5

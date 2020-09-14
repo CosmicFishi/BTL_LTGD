@@ -15,14 +15,6 @@ namespace btlon
         {
             InitializeComponent();
         }
-        public Boolean checkAccountAdmin()
-        {
-           if(txtBoxAccount.Text.IndexOf("Admin")>-1)
-            {
-                return true;
-            }
-            return false;
-        }
         private void txtBoxAccount_TextChanged(object sender, EventArgs e)
         {
         }
@@ -110,22 +102,19 @@ namespace btlon
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            if(checkAccountAdmin()==true)
+            this.Hide();
+            if (txtBoxAccount.Text != "admin") // nếu tài khoản k phải của admin thì đăng nhập chuyển vào form1
             {
-                this.Hide();
+                //nếu đc thì bạn check trong cơ sở dữ liệu đăng nhập có đúng k, nếu đúng thì chuyển qua form1 và truyền tên với số điện thoại
+                Form1 form1 = new Form1();
+                form1.getProp("Ten khach hangf", 1223);  // truyền tên khách hàng và số điện thoại vào form1
+                form1.ShowDialog();
+            }
+            else {
                 QuanLyKhachHang qlkh = new QuanLyKhachHang();
                 qlkh.ShowDialog();
-                this.Close();
-            }    
-            else
-            {
-
-                this.Hide();
-                Form1 f = new Form1();
-                f.ShowDialog();
-                this.Close();
-            }    
-           
+            }
+            this.Close();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tvMenu = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbAccount = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lvSp = new System.Windows.Forms.ListView();
             this.lbPagination = new System.Windows.Forms.Label();
@@ -47,7 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnChangeView = new System.Windows.Forms.Button();
             this.txtContent = new System.Windows.Forms.TextBox();
-            this.lbAccount = new System.Windows.Forms.Label();
+            this.lbThem = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -127,6 +130,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(895, 69);
             this.panel2.TabIndex = 4;
+            // 
+            // lbAccount
+            // 
+            this.lbAccount.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
+            this.lbAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAccount.Location = new System.Drawing.Point(648, 23);
+            this.lbAccount.Name = "lbAccount";
+            this.lbAccount.Size = new System.Drawing.Size(158, 24);
+            this.lbAccount.TabIndex = 2;
+            this.lbAccount.Text = "ADMIN";
+            this.lbAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureBox1
             // 
@@ -296,17 +311,24 @@
             this.txtContent.Size = new System.Drawing.Size(844, 456);
             this.txtContent.TabIndex = 11;
             // 
-            // lbAccount
+            // lbThem
             // 
-            this.lbAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbAccount.AutoSize = true;
-            this.lbAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAccount.Location = new System.Drawing.Point(750, 23);
-            this.lbAccount.Name = "lbAccount";
-            this.lbAccount.Size = new System.Drawing.Size(56, 17);
-            this.lbAccount.TabIndex = 2;
-            this.lbAccount.Text = "ADMIN";
-            this.lbAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbThem.BackColor = System.Drawing.Color.LightCoral;
+            this.lbThem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbThem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbThem.Location = new System.Drawing.Point(1043, 140);
+            this.lbThem.Name = "lbThem";
+            this.lbThem.Size = new System.Drawing.Size(130, 23);
+            this.lbThem.TabIndex = 12;
+            this.lbThem.Text = "Thêm thành công";
+            this.lbThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbThem.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -315,6 +337,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1196, 757);
+            this.Controls.Add(this.lbThem);
             this.Controls.Add(this.txtContent);
             this.Controls.Add(this.btnChangeView);
             this.Controls.Add(this.pnDetail);
@@ -331,7 +354,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnDetail.ResumeLayout(false);
             this.pnDetail.PerformLayout();
@@ -363,6 +385,8 @@
         private System.Windows.Forms.Button btnChangeView;
         private System.Windows.Forms.TextBox txtContent;
         private System.Windows.Forms.Label lbAccount;
+        private System.Windows.Forms.Label lbThem;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
