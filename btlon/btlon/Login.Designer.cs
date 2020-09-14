@@ -100,7 +100,7 @@
             this.txtBoxAccount.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtBoxAccount.Location = new System.Drawing.Point(552, 72);
             this.txtBoxAccount.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBoxAccount.MaxLength = 14;
+            this.txtBoxAccount.MaxLength = 30;
             this.txtBoxAccount.Name = "txtBoxAccount";
             this.txtBoxAccount.Size = new System.Drawing.Size(247, 31);
             this.txtBoxAccount.TabIndex = 3;

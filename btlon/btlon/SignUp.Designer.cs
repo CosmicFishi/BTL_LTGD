@@ -51,6 +51,8 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.dateTimePickerNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.textBoxDc = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             this.btTaoTaiKhoan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btTaoTaiKhoan.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btTaoTaiKhoan.ForeColor = System.Drawing.Color.Olive;
-            this.btTaoTaiKhoan.Location = new System.Drawing.Point(76, 407);
+            this.btTaoTaiKhoan.Location = new System.Drawing.Point(76, 448);
             this.btTaoTaiKhoan.Name = "btTaoTaiKhoan";
             this.btTaoTaiKhoan.Size = new System.Drawing.Size(248, 31);
             this.btTaoTaiKhoan.TabIndex = 27;
@@ -73,7 +75,7 @@
             // 
             this.checkBoxShowPassword.AutoSize = true;
             this.checkBoxShowPassword.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.checkBoxShowPassword.Location = new System.Drawing.Point(11, 378);
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(11, 419);
             this.checkBoxShowPassword.Name = "checkBoxShowPassword";
             this.checkBoxShowPassword.Size = new System.Drawing.Size(130, 23);
             this.checkBoxShowPassword.TabIndex = 26;
@@ -89,7 +91,7 @@
             this.comboBoxNam.ForeColor = System.Drawing.SystemColors.MenuText;
             this.comboBoxNam.FormattingEnabled = true;
             this.comboBoxNam.IntegralHeight = false;
-            this.comboBoxNam.Location = new System.Drawing.Point(313, 325);
+            this.comboBoxNam.Location = new System.Drawing.Point(313, 366);
             this.comboBoxNam.Name = "comboBoxNam";
             this.comboBoxNam.Size = new System.Drawing.Size(83, 25);
             this.comboBoxNam.TabIndex = 25;
@@ -102,7 +104,7 @@
             this.comboBoxThang.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBoxThang.FormattingEnabled = true;
             this.comboBoxThang.IntegralHeight = false;
-            this.comboBoxThang.Location = new System.Drawing.Point(224, 325);
+            this.comboBoxThang.Location = new System.Drawing.Point(224, 366);
             this.comboBoxThang.Name = "comboBoxThang";
             this.comboBoxThang.Size = new System.Drawing.Size(83, 25);
             this.comboBoxThang.TabIndex = 24;
@@ -116,7 +118,7 @@
             this.comboBoxNgay.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBoxNgay.FormattingEnabled = true;
             this.comboBoxNgay.IntegralHeight = false;
-            this.comboBoxNgay.Location = new System.Drawing.Point(135, 325);
+            this.comboBoxNgay.Location = new System.Drawing.Point(135, 366);
             this.comboBoxNgay.Name = "comboBoxNgay";
             this.comboBoxNgay.Size = new System.Drawing.Size(83, 25);
             this.comboBoxNgay.TabIndex = 23;
@@ -128,7 +130,7 @@
             // 
             this.radioButtonNu.AutoSize = true;
             this.radioButtonNu.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radioButtonNu.Location = new System.Drawing.Point(251, 287);
+            this.radioButtonNu.Location = new System.Drawing.Point(251, 328);
             this.radioButtonNu.Name = "radioButtonNu";
             this.radioButtonNu.Size = new System.Drawing.Size(48, 23);
             this.radioButtonNu.TabIndex = 22;
@@ -141,7 +143,7 @@
             this.radioButtonNam.AutoSize = true;
             this.radioButtonNam.Checked = true;
             this.radioButtonNam.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radioButtonNam.Location = new System.Drawing.Point(146, 287);
+            this.radioButtonNam.Location = new System.Drawing.Point(146, 328);
             this.radioButtonNam.Name = "radioButtonNam";
             this.radioButtonNam.Size = new System.Drawing.Size(55, 21);
             this.radioButtonNam.TabIndex = 21;
@@ -153,7 +155,7 @@
             // txtbCfPassword
             // 
             this.txtbCfPassword.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbCfPassword.Location = new System.Drawing.Point(148, 237);
+            this.txtbCfPassword.Location = new System.Drawing.Point(148, 273);
             this.txtbCfPassword.Name = "txtbCfPassword";
             this.txtbCfPassword.Size = new System.Drawing.Size(248, 26);
             this.txtbCfPassword.TabIndex = 19;
@@ -163,7 +165,7 @@
             // txtbPassword
             // 
             this.txtbPassword.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbPassword.Location = new System.Drawing.Point(148, 192);
+            this.txtbPassword.Location = new System.Drawing.Point(148, 228);
             this.txtbPassword.Name = "txtbPassword";
             this.txtbPassword.Size = new System.Drawing.Size(248, 26);
             this.txtbPassword.TabIndex = 20;
@@ -198,7 +200,6 @@
             this.txtbHoTen.Name = "txtbHoTen";
             this.txtbHoTen.Size = new System.Drawing.Size(248, 26);
             this.txtbHoTen.TabIndex = 16;
-            this.txtbHoTen.TextChanged += new System.EventHandler(this.txtbHoTen_TextChanged);
             this.txtbHoTen.Enter += new System.EventHandler(this.txtbHoTen_Enter);
             this.txtbHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbHoTen_KeyPress);
             this.txtbHoTen.Leave += new System.EventHandler(this.txtbHoTen_Leave);
@@ -207,7 +208,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(8, 328);
+            this.label5.Location = new System.Drawing.Point(8, 369);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 17);
@@ -218,7 +219,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(8, 240);
+            this.label1.Location = new System.Drawing.Point(8, 276);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 17);
@@ -229,7 +230,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(8, 287);
+            this.label4.Location = new System.Drawing.Point(8, 328);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 17);
@@ -240,7 +241,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(8, 200);
+            this.label3.Location = new System.Drawing.Point(8, 236);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
@@ -295,7 +296,7 @@
             // 
             this.dateTimePickerNgaySinh.CalendarFont = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dateTimePickerNgaySinh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(132, 356);
+            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(132, 397);
             this.dateTimePickerNgaySinh.Name = "dateTimePickerNgaySinh";
             this.dateTimePickerNgaySinh.Size = new System.Drawing.Size(166, 20);
             this.dateTimePickerNgaySinh.TabIndex = 28;
@@ -308,11 +309,32 @@
             // 
             this.error.ContainerControl = this;
             // 
+            // textBoxDc
+            // 
+            this.textBoxDc.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDc.Location = new System.Drawing.Point(148, 185);
+            this.textBoxDc.Name = "textBoxDc";
+            this.textBoxDc.Size = new System.Drawing.Size(248, 26);
+            this.textBoxDc.TabIndex = 30;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(8, 193);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 17);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Địa Chỉ";
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 450);
+            this.ClientSize = new System.Drawing.Size(460, 524);
+            this.Controls.Add(this.textBoxDc);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePickerNgaySinh);
             this.Controls.Add(this.btTaoTaiKhoan);
             this.Controls.Add(this.checkBoxShowPassword);
@@ -369,5 +391,7 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgaySinh;
         private System.Windows.Forms.ErrorProvider error;
+        private System.Windows.Forms.TextBox textBoxDc;
+        private System.Windows.Forms.Label label6;
     }
 }

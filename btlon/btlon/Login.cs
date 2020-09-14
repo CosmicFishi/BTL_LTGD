@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Drawing.Imaging;
 
 namespace btlon
 {
@@ -15,9 +17,43 @@ namespace btlon
         {
             InitializeComponent();
         }
+        public static string email; // sdt dùng để gán qua form1
+        public static string sdt;// email dùng để gán qua form 1
+        public Boolean checkDangNhap()
+        {
+            String string_conn =
+                @"Data Source=MAYTINH-B85D1NU\SQLEXPRESS;
+Initial Catalog=QuanLyKhachHang;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(string_conn);
+            conn.Open();
+            String qr = "Select * from KhachHang where Email='"+txtBoxAccount.Text+"' and password = '"+txtBoxPassword.Text+"';";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(qr,conn);
+            DataTable dttb = new DataTable();
+            dataAdapter.Fill(dttb);
+            if(dttb.Rows.Count==1)
+            {
+                foreach (DataRow dr in dttb.Rows)
+                {
+                    sdt = dr["Sdt"].ToString();
+                }
+                return true;
+            }    
+            conn.Close();
+            return false;
+        }
         public Boolean checkAccountAdmin()
         {
-           if(txtBoxAccount.Text.IndexOf("Admin")>-1)
+            String string_conn =
+               @"Data Source=MAYTINH-B85D1NU\SQLEXPRESS;
+Initial Catalog=QuanLyKhachHang;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(string_conn);
+            conn.Open();
+            String qr = "Select * from Admin  where tk='" + txtBoxAccount.Text + "' and pass = '" + txtBoxPassword.Text + "';";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(qr, conn);
+            DataTable dttb = new DataTable();
+            dataAdapter.Fill(dttb);
+
+            if (txtBoxAccount.Text.IndexOf("Admin")>-1 && dttb.Rows.Count==1)
             {
                 return true;
             }
@@ -110,21 +146,27 @@ namespace btlon
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            if(checkAccountAdmin()==true)
+            if (checkAccountAdmin() == true)
             {
                 this.Hide();
                 QuanLyKhachHang qlkh = new QuanLyKhachHang();
                 qlkh.ShowDialog();
                 this.Close();
-            }    
-            else
+            }
+            else if(checkDangNhap() == true)
             {
+                email = txtBoxAccount.Text;
+                MessageBox.Show("Đăng nhập thành công");
                 this.Hide();
                 Form1 f = new Form1();
                 f.ShowDialog();
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Tài Khoản Hoặc Mật Khẩu Của Bạn Đã Sai");
             }    
-           
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

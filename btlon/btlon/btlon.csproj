@@ -81,11 +81,6 @@
     <Compile Include="QuanLyKhachHang.Designer.cs">
       <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyKhachHangDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyKhachHangDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,17 +155,6 @@
     <None Include="login\images.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="QuanLyKhachHangDataSet.xsc">
-      <DependentUpon>QuanLyKhachHangDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QuanLyKhachHangDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuanLyKhachHangDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QuanLyKhachHangDataSet.xss">
-      <DependentUpon>QuanLyKhachHangDataSet.xsd</DependentUpon>
-    </None>
     <None Include="sanpham\OIP2MCJIFZB.jpg" />
   </ItemGroup>
   <ItemGroup>

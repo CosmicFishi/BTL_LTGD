@@ -18,25 +18,26 @@ namespace btlon
             InitializeComponent();
         }
         DateTime dt;
-       SqlConnection conn;
+        String gt = ""; // giới tính
+        SqlConnection conn;
         SqlCommandBuilder cmmbd;
         SqlDataAdapter dtad;
         DataTable dttb;
-        String gt = ""; // giới tính
+       
         String string_conn = @"Data Source=MAYTINH-B85D1NU\SQLEXPRESS;Initial Catalog=QuanLyKhachHang;Integrated Security=True";
-        public String taoID()
-        {
-           String qr = "Select * from KhachHang";
-            dtad = new SqlDataAdapter(qr, conn);
-            cmmbd = new SqlCommandBuilder(dtad);
-            dttb = new DataTable();
-            dtad.Fill(dttb);
-            dataGridView1.DataSource = dttb;
-           int tam = dataGridView1.Rows.Count-1;
-           var iDCuoi  = dataGridView1.Rows[tam].Cells[0].Value.ToString().Substring(2);
-           String iD = String.Format("KH" + (int.Parse(iDCuoi)+1));
-           return iD;
-        }
+        //public String taoID()
+        //{
+        //   String qr = "Select * from KhachHang";
+        //    dtad = new SqlDataAdapter(qr, conn);
+        //    cmmbd = new SqlCommandBuilder(dtad);
+        //    dttb = new DataTable();
+        //    dtad.Fill(dttb);
+        //    dataGridView1.DataSource = dttb;
+        //   int tam = dataGridView1.Rows.Count-1;
+        //   var iDCuoi  = dataGridView1.Rows[tam].Cells[0].Value.ToString().Substring(2);
+        //   String iD = String.Format("KH" + (int.Parse(iDCuoi)+1));
+        //   return iD;
+        //}
         public void Loaddata()
         {
             String qr = "SELECT*FROM[dbo].[KhachHang]";
@@ -152,6 +153,22 @@ namespace btlon
 
         private void dateTimePickerNgaySinh_ValueChanged(object sender, EventArgs e)
         {
+        }
+
+        private void btTimKiem_Click(object sender, EventArgs e)
+        {
+            String sreachQuery = "Select * From KhachHang where Email like '%" + textBoxEmail.Text + "%';";
+            dtad = new SqlDataAdapter(sreachQuery, conn);
+            cmmbd = new SqlCommandBuilder(dtad);
+            dttb = new DataTable();
+            dtad.Fill(dttb);
+            dataGridView1.DataSource = dttb;
+        }
+
+        private void buttonLoadLai_Click(object sender, EventArgs e)
+        {
+            Loaddata();
+            textBoxEmail.Text = "";
         }
     }
 }
