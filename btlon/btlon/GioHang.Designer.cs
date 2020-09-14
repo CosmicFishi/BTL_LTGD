@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.TTKH = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbSoTK = new System.Windows.Forms.Label();
             this.lbTen = new System.Windows.Forms.Label();
             this.btnThanhToan = new System.Windows.Forms.Button();
@@ -42,14 +41,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.TTKH.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TTKH
             // 
-            this.TTKH.Controls.Add(this.pictureBox1);
+            this.TTKH.Controls.Add(this.label3);
             this.TTKH.Controls.Add(this.lbSoTK);
+            this.TTKH.Controls.Add(this.label2);
             this.TTKH.Controls.Add(this.lbTen);
             this.TTKH.Location = new System.Drawing.Point(14, 8);
             this.TTKH.Name = "TTKH";
@@ -58,33 +59,25 @@
             this.TTKH.TabStop = false;
             this.TTKH.Text = "Thông tin khách hàng";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(30, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 72);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // lbSoTK
             // 
             this.lbSoTK.AutoSize = true;
             this.lbSoTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSoTK.Location = new System.Drawing.Point(209, 61);
+            this.lbSoTK.Location = new System.Drawing.Point(160, 59);
             this.lbSoTK.Name = "lbSoTK";
-            this.lbSoTK.Size = new System.Drawing.Size(95, 17);
+            this.lbSoTK.Size = new System.Drawing.Size(91, 17);
             this.lbSoTK.TabIndex = 0;
-            this.lbSoTK.Text = "Số điện thoại:";
+            this.lbSoTK.Text = "Số điện thoại";
             // 
             // lbTen
             // 
             this.lbTen.AutoSize = true;
             this.lbTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTen.Location = new System.Drawing.Point(209, 30);
+            this.lbTen.Location = new System.Drawing.Point(160, 28);
             this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(37, 17);
+            this.lbTen.Size = new System.Drawing.Size(33, 17);
             this.lbTen.TabIndex = 0;
-            this.lbTen.Text = "Tên:";
+            this.lbTen.Text = "Tên";
             // 
             // btnThanhToan
             // 
@@ -104,6 +97,7 @@
             this.colAmount,
             this.colPrice,
             this.columnHeader1});
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(15, 121);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(521, 311);
@@ -174,6 +168,26 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(59, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Tên:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(59, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Số điện thoại:";
+            // 
             // gioHang1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,7 +211,6 @@
             this.Load += new System.EventHandler(this.GioHang_Load);
             this.TTKH.ResumeLayout(false);
             this.TTKH.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,7 +219,6 @@
 
         private System.Windows.Forms.GroupBox TTKH;
         private System.Windows.Forms.Button btnThanhToan;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbTen;
         private System.Windows.Forms.Label lbSoTK;
         private System.Windows.Forms.ListView listView1;
@@ -218,5 +230,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
