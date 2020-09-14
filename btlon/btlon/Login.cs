@@ -26,18 +26,18 @@ namespace btlon
 Initial Catalog=QuanLyKhachHang;Integrated Security=True";
             SqlConnection conn = new SqlConnection(string_conn);
             conn.Open();
-            String qr = "Select * from KhachHang where Email='"+txtBoxAccount.Text+"' and password = '"+txtBoxPassword.Text+"';";
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(qr,conn);
+            String qr = "Select * from KhachHang where Email='" + txtBoxAccount.Text + "' and password = '" + txtBoxPassword.Text + "';";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(qr, conn);
             DataTable dttb = new DataTable();
             dataAdapter.Fill(dttb);
-            if(dttb.Rows.Count==1)
+            if (dttb.Rows.Count == 1)
             {
                 foreach (DataRow dr in dttb.Rows)
                 {
                     sdt = dr["Sdt"].ToString();
                 }
                 return true;
-            }    
+            }
             conn.Close();
             return false;
         }
@@ -53,7 +53,7 @@ Initial Catalog=QuanLyKhachHang;Integrated Security=True";
             DataTable dttb = new DataTable();
             dataAdapter.Fill(dttb);
 
-            if (txtBoxAccount.Text.IndexOf("Admin")>-1 && dttb.Rows.Count==1)
+            if (txtBoxAccount.Text.IndexOf("Admin") > -1 && dttb.Rows.Count == 1)
             {
                 return true;
             }
@@ -65,7 +65,7 @@ Initial Catalog=QuanLyKhachHang;Integrated Security=True";
 
         private void Login_Load(object sender, EventArgs e)
         {
-            if(txtBoxPassword.Text!="")
+            if (txtBoxPassword.Text != "")
             {
                 txtBoxPassword.PasswordChar = '*';
             }
@@ -84,7 +84,7 @@ Initial Catalog=QuanLyKhachHang;Integrated Security=True";
 
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBoxShowPassword.Checked)
+            if (checkBoxShowPassword.Checked)
             {
                 txtBoxPassword.PasswordChar = '\0';
             }
@@ -112,7 +112,7 @@ Initial Catalog=QuanLyKhachHang;Integrated Security=True";
                 txtBoxAccount.Text = "";
                 txtBoxAccount.ForeColor = Color.Black;
             }
-           
+
         }
 
         private void txtBoxAccount_Leave(object sender, EventArgs e)
@@ -126,22 +126,22 @@ Initial Catalog=QuanLyKhachHang;Integrated Security=True";
 
         private void txtBoxPassword_Enter(object sender, EventArgs e)
         {
-            if(txtBoxPassword.Text=="Nhập Password")
+            if (txtBoxPassword.Text == "Nhập Password")
             {
                 txtBoxPassword.Text = "";
-                txtBoxPassword.ForeColor =Color.Black;
+                txtBoxPassword.ForeColor = Color.Black;
                 txtBoxPassword.PasswordChar = '*';
-            }    
+            }
         }
 
         private void txtBoxPassword_Leave(object sender, EventArgs e)
         {
-            if(txtBoxPassword.Text=="")
+            if (txtBoxPassword.Text == "")
             {
                 txtBoxPassword.Text = "Nhập Password";
                 txtBoxPassword.ForeColor = SystemColors.ControlDark;
                 txtBoxPassword.PasswordChar = '\0';
-            }    
+            }
         }
 
         private void btLogin_Click(object sender, EventArgs e)
@@ -153,7 +153,7 @@ Initial Catalog=QuanLyKhachHang;Integrated Security=True";
                 qlkh.ShowDialog();
                 this.Close();
             }
-            else if(checkDangNhap() == true)
+            else if (checkDangNhap() == true)
             {
                 email = txtBoxAccount.Text;
                 MessageBox.Show("Đăng nhập thành công");
@@ -165,7 +165,7 @@ Initial Catalog=QuanLyKhachHang;Integrated Security=True";
             else
             {
                 MessageBox.Show("Tài Khoản Hoặc Mật Khẩu Của Bạn Đã Sai");
-            }    
+            }
 
         }
 
@@ -173,6 +173,11 @@ Initial Catalog=QuanLyKhachHang;Integrated Security=True";
         {
             SignUp sg = new SignUp();
             sg.ShowDialog();
+        }
+
+        private void Login_KeyPress(object sender, KeyPressEventArgs e)
+        { 
+
         }
     }
 }

@@ -126,7 +126,7 @@ namespace btlon
             dt = dateTimePickerNgaySinh.Value;
             try
             {
-                String update_String = "UPDATE [dbo].[KhachHang] SET hoTen='"+txtbHoTen.Text +"',Sdt ='"+textBoxSDT.Text+"',DiaChi ='"+textBoxDc.Text+"',gioiTinh ='"+gt+"' ,ngaySinh ='"+dt.ToString("dd/MM/yyyy")+"' ,password = '"+textBoxPassword.Text+"' where Email='"+textBoxEmail.Text+"';";
+                String update_String = "UPDATE [dbo].[KhachHang] SET hoTen=N'"+txtbHoTen.Text +"',Sdt =N'"+textBoxSDT.Text+"',DiaChi =N'"+textBoxDc.Text+"',gioiTinh =N'"+gt+"' ,ngaySinh ='"+dt.ToString("dd/MM/yyyy")+"' ,password = '"+textBoxPassword.Text+"' where Email=N'"+textBoxEmail.Text+"';";
                 SqlCommand cmmd = new SqlCommand(update_String, conn);
                 cmmd.ExecuteNonQuery();
                 Loaddata();
@@ -157,6 +157,9 @@ namespace btlon
 
         private void btTimKiem_Click(object sender, EventArgs e)
         {
+            textBoxDc.Text = "";
+            textBoxPassword.Text = "";
+            textBoxSDT.Text = "";
             String sreachQuery = "Select * From KhachHang where Email like '%" + textBoxEmail.Text + "%';";
             dtad = new SqlDataAdapter(sreachQuery, conn);
             cmmbd = new SqlCommandBuilder(dtad);
@@ -169,6 +172,12 @@ namespace btlon
         {
             Loaddata();
             textBoxEmail.Text = "";
+        }
+
+        private void QuanLyKhachHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Ban co chac muon dong??", "Dong form", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                e.Cancel = true;
         }
     }
 }

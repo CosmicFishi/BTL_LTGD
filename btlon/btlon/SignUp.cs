@@ -98,6 +98,11 @@ namespace btlon
                 txtbHoTen.ForeColor = SystemColors.ControlDark;
                 error.SetError(txtbHoTen, "Không bỏ Trống");
             }  
+            else
+            {
+                btTaoTaiKhoan.Enabled = true;
+                error.Clear();
+            }    
         }
 
         private void txtbSĐT_Enter(object sender, EventArgs e)
@@ -240,7 +245,7 @@ namespace btlon
         {
             conn = new SqlConnection(string_conn);
             String qr = "INSERT INTO [dbo].[KhachHang]([Email],[hoTen],[Sdt],[DiaChi],[gioiTinh],[ngaySinh],[password]) VALUES" +
-                "('"+txtbEmail.Text+"', '"+txtbHoTen.Text+"', '"+txtbSĐT.Text+"', '"+textBoxDc.Text+"', '"+gt+"', '"+dateTimePickerNgaySinh.Value.ToString("dd/MM/yyyy")+"', '"+txtbCfPassword.Text+"')";
+                "(N'"+txtbEmail.Text+"', N'"+txtbHoTen.Text+"', '"+txtbSĐT.Text+"', N'"+textBoxDc.Text+"', N'"+gt+"', '"+dateTimePickerNgaySinh.Value.ToString("dd/MM/yyyy")+"', '"+txtbCfPassword.Text+"')";
             try
             {
                 SqlCommand cmmd = new SqlCommand(qr, conn);

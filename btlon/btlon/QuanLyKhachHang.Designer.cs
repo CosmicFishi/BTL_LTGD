@@ -334,6 +334,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "QuanLyKhachHang";
             this.Text = "QuanLyKhachHang";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QuanLyKhachHang_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.QuanLyKhachHang_FormClosed);
             this.Load += new System.EventHandler(this.QuanLyKhachHang_Load);
             this.menuStrip1.ResumeLayout(false);
