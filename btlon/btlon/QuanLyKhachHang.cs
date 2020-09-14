@@ -24,7 +24,6 @@ namespace btlon
         SqlCommandBuilder cmmbd;
         SqlDataAdapter dtad;
         DataTable dttb;
-        string  path = Application.StartupPath + @"\" + "QLKH.mdf";
         String string_conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+Application.StartupPath + @"\" + "QLKH.mdf"+";Integrated Security=True";
         //public String taoID()
         //{
@@ -69,7 +68,6 @@ namespace btlon
 
         private void QuanLyKhachHang_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(path);
             conn = new SqlConnection(string_conn);
             conn.Open();
             Loaddata();

@@ -22,6 +22,8 @@ namespace btlon
         String string_conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+Application.StartupPath + @"\" + "QLKH.mdf"+";Integrated Security=True";
         public Boolean checkEmail()
         {
+
+           
             String s = txtbEmail.Text;
             int id = s.IndexOf("@gmail.com");
             if(id==-1)
@@ -29,6 +31,23 @@ namespace btlon
                 return false;
             }    
             return true;
+        }
+        public Boolean IsEmailHaved()
+        {
+            String string_conn =
+               @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
+            SqlConnection conn = new SqlConnection(string_conn);
+            conn.Open();
+            String qr = "Select * from KhachHang where Email='" + txtbEmail.Text + "';";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(qr, conn);
+            DataTable dttb = new DataTable();
+            dataAdapter.Fill(dttb);
+            if (dttb.Rows.Count == 1)
+            {
+                return true;
+            }
+            conn.Close();
+            return false;
         }
         private void SignUp_Load(object sender, EventArgs e)
         {
@@ -142,7 +161,13 @@ namespace btlon
 
         private void txtbEmail_Leave(object sender, EventArgs e)
         {
-            if (checkEmail() == false || txtbEmail.Text == "")
+            if(IsEmailHaved()==true)
+            {
+                MessageBox.Show("Email bị trùng");
+                btTaoTaiKhoan.Enabled = false;
+            }
+          
+            else if (checkEmail() == false || txtbEmail.Text == "")
             {
                 btTaoTaiKhoan.Enabled = false;
                 MessageBox.Show("Sai Định Dạng Email \r\n abc.@gmail.com hoặc abc.@gmail.com.vn");
@@ -198,7 +223,6 @@ namespace btlon
             else
             {
                 error.Clear();
-                btTaoTaiKhoan.Enabled = true;
             }
         }
 
@@ -220,6 +244,11 @@ namespace btlon
                 txtbCfPassword.ForeColor = SystemColors.ControlDark;
                 txtbCfPassword.PasswordChar = '\0';
                 error.SetError(txtbCfPassword, "Không bỏ trống");
+             
+            }
+            else if(txtbCfPassword.Text!=txtbPassword.Text)
+            {
+                MessageBox.Show("Mật Khẩu Không Trùng Khớp");
                 btTaoTaiKhoan.Enabled = false;
             }
             else
@@ -227,6 +256,7 @@ namespace btlon
                 error.Clear();
                 btTaoTaiKhoan.Enabled = true;
             }
+
         }
 
         private void radioButtonNam_CheckedChanged(object sender, EventArgs e)
@@ -256,12 +286,17 @@ namespace btlon
             {
 
                 MessageBox.Show("Tạo Tài Khoản thất bại"+err.ToString());
+                conn.Close();
             }
-            conn.Close();
-            MessageBox.Show("Tạo tài khoản thành công");
-            Form1 f = new Form1();
-            f.ShowDialog();
-            this.Close();
+            finally
+            {
+                conn.Close();
+                MessageBox.Show("Tạo tài khoản thành công");
+                Form1 f = new Form1();
+                f.ShowDialog();
+                this.Close();
+            }
+            
         }
 
         private void dateTimePickerNgaySinh_Enter(object sender, EventArgs e)
