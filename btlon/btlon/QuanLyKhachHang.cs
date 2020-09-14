@@ -13,6 +13,7 @@ namespace btlon
 {
     public partial class QuanLyKhachHang : Form
     {
+
         public QuanLyKhachHang()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace btlon
         SqlCommandBuilder cmmbd;
         SqlDataAdapter dtad;
         DataTable dttb;
-       
+        string path = Application.StartupPath + @"\" + "QuanLyKhachHang.mdf";
         String string_conn = @"Data Source=MAYTINH-B85D1NU\SQLEXPRESS;Initial Catalog=QuanLyKhachHang;Integrated Security=True";
         //public String taoID()
         //{
@@ -68,6 +69,7 @@ namespace btlon
 
         private void QuanLyKhachHang_Load(object sender, EventArgs e)
         {
+            MessageBox.Show(path);
             conn = new SqlConnection(string_conn);
             conn.Open();
             Loaddata();
