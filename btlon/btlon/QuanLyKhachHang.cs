@@ -24,8 +24,8 @@ namespace btlon
         SqlCommandBuilder cmmbd;
         SqlDataAdapter dtad;
         DataTable dttb;
-        string path = Application.StartupPath + @"\" + "QuanLyKhachHang.mdf";
-        String string_conn = @"Data Source=MAYTINH-B85D1NU\SQLEXPRESS;Initial Catalog=QuanLyKhachHang;Integrated Security=True";
+        string  path = Application.StartupPath + @"\" + "QLKH.mdf";
+        String string_conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+Application.StartupPath + @"\" + "QLKH.mdf"+";Integrated Security=True";
         //public String taoID()
         //{
         //   String qr = "Select * from KhachHang";
@@ -82,8 +82,6 @@ namespace btlon
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridView1.Rows.Count>1)
-            {
                 int i;
                 i = dataGridView1.CurrentRow.Index;
                 textBoxEmail.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
@@ -100,8 +98,7 @@ namespace btlon
                 else
                 {
                     radioButtonNu.Checked = true;
-                }
-            }    
+                }    
             
         }
 

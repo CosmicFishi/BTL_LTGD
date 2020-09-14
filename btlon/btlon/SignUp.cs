@@ -19,7 +19,7 @@ namespace btlon
         }
         String gt;
         SqlConnection conn;
-        String string_conn = @"Data Source=MAYTINH-B85D1NU\SQLEXPRESS;Initial Catalog=QuanLyKhachHang;Integrated Security=True";
+        String string_conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+Application.StartupPath + @"\" + "QLKH.mdf"+";Integrated Security=True";
         public Boolean checkEmail()
         {
             String s = txtbEmail.Text;

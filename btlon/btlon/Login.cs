@@ -22,8 +22,7 @@ namespace btlon
         public Boolean checkDangNhap()
         {
             String string_conn =
-                @"Data Source=MAYTINH-B85D1NU\SQLEXPRESS;
-Initial Catalog=QuanLyKhachHang;Integrated Security=True";
+                @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+Application.StartupPath + @"\" + "QLKH.mdf"+";Integrated Security=True";
             SqlConnection conn = new SqlConnection(string_conn);
             conn.Open();
             String qr = "Select * from KhachHang where Email='" + txtBoxAccount.Text + "' and password = '" + txtBoxPassword.Text + "';";
@@ -44,8 +43,7 @@ Initial Catalog=QuanLyKhachHang;Integrated Security=True";
         public Boolean checkAccountAdmin()
         {
             String string_conn =
-               @"Data Source=MAYTINH-B85D1NU\SQLEXPRESS;
-Initial Catalog=QuanLyKhachHang;Integrated Security=True";
+               @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
             SqlConnection conn = new SqlConnection(string_conn);
             conn.Open();
             String qr = "Select * from Admin  where tk='" + txtBoxAccount.Text + "' and pass = '" + txtBoxPassword.Text + "';";
