@@ -19,6 +19,7 @@ namespace btlon
         }
         public static string email; // sdt dùng để gán qua form1
         public static string sdt;// email dùng để gán qua form 1
+        public static string ten;
         public Boolean checkDangNhap()
         {
             String string_conn =
@@ -36,6 +37,7 @@ namespace btlon
                     foreach (DataRow dr in dttb.Rows)
                     {
                         sdt = dr["Sdt"].ToString();
+                        ten = dr["hoTen"].ToString();
                     }
                     return true;
                 }
