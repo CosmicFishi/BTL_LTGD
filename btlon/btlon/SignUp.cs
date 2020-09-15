@@ -17,7 +17,7 @@ namespace btlon
         {
             InitializeComponent();
         }
-        String gt;
+        String gt= "Nam";
         SqlConnection conn;
         String string_conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+Application.StartupPath + @"\" + "QLKH.mdf"+";Integrated Security=True";
         public Boolean checkEmail()
@@ -70,8 +70,8 @@ namespace btlon
             txtbHoTen.ForeColor = SystemColors.ControlDark;
             txtbEmail.Text = "Nhập Email";
             txtbEmail.ForeColor = SystemColors.ControlDark;
-            txtbPassword.Text = "Nhập Password của bạn";
-            txtbPassword.ForeColor = SystemColors.ControlDark;
+            //txtbPassword.Text = "Nhập Password của bạn";
+            //txtbPassword.ForeColor = SystemColors.ControlDark;
             txtbCfPassword.Text = "Xác Nhận Lại Mật Khẩu";
             txtbCfPassword.ForeColor = SystemColors.ControlDark;
             btTaoTaiKhoan.Enabled = false;
@@ -116,6 +116,9 @@ namespace btlon
                 txtbHoTen.Text = "Nhập Họ Tên";
                 txtbHoTen.ForeColor = SystemColors.ControlDark;
                 error.SetError(txtbHoTen, "Không bỏ Trống");
+                btTaoTaiKhoan.Enabled = false;
+                btTaoTaiKhoan.ForeColor = Color.DarkGray;
+                btTaoTaiKhoan.BackColor = Color.Gray;
             }  
             else
             {
@@ -141,6 +144,8 @@ namespace btlon
                 txtbSĐT.ForeColor = SystemColors.ControlDark;
                 error.SetError(txtbSĐT, "Không bỏ Trống");
                 btTaoTaiKhoan.Enabled = false;
+                btTaoTaiKhoan.ForeColor = Color.DarkGray;
+                btTaoTaiKhoan.BackColor = Color.Gray;
             }
             else
             {
@@ -165,6 +170,8 @@ namespace btlon
             {
                 MessageBox.Show("Email bị trùng");
                 btTaoTaiKhoan.Enabled = false;
+                btTaoTaiKhoan.ForeColor = Color.DarkGray;
+                btTaoTaiKhoan.BackColor = Color.Gray;
             }
           
             else if (checkEmail() == false || txtbEmail.Text == "")
@@ -174,6 +181,14 @@ namespace btlon
                 txtbEmail.Text = "Nhập Email";
                 txtbEmail.ForeColor = SystemColors.ControlDark;
                 error.SetError(txtbEmail, "Không bỏ Trống");
+                btTaoTaiKhoan.ForeColor = Color.DarkGray;
+                btTaoTaiKhoan.BackColor = Color.Gray;
+            }
+            else if(txtbPassword.Text=="")
+            {
+                btTaoTaiKhoan.Enabled = false;
+                btTaoTaiKhoan.ForeColor = Color.DarkGray;
+                btTaoTaiKhoan.BackColor = Color.Gray;
             }
             else
             {
@@ -215,14 +230,31 @@ namespace btlon
             if (txtbPassword.Text == "")
             {
                 txtbPassword.Text = "Nhập Password của bạn";
-                
                 txtbPassword.ForeColor = SystemColors.ControlDark;
                 txtbPassword.PasswordChar = '\0';
                 error.SetError(txtbPassword, "Không bỏ trống");
+                btTaoTaiKhoan.Enabled = false;
+                btTaoTaiKhoan.ForeColor = Color.DarkGray;
+                btTaoTaiKhoan.BackColor = Color.Gray;
+            }
+           else if(txtbPassword.Text!=txtbCfPassword.Text)
+            {
+                btTaoTaiKhoan.Enabled = false;
+                btTaoTaiKhoan.ForeColor = Color.DarkGray;
+                btTaoTaiKhoan.BackColor = Color.Gray;
+            }
+            else if(txtbCfPassword.Text=="")
+            {
+                btTaoTaiKhoan.Enabled = false;
+                btTaoTaiKhoan.ForeColor = Color.DarkGray;
+                btTaoTaiKhoan.BackColor = Color.Gray;
             }
             else
             {
+                btTaoTaiKhoan.Enabled = true;
                 error.Clear();
+                btTaoTaiKhoan.ForeColor = Color.Red;
+                btTaoTaiKhoan.BackColor = Color.Yellow;
             }
         }
 
@@ -244,17 +276,24 @@ namespace btlon
                 txtbCfPassword.ForeColor = SystemColors.ControlDark;
                 txtbCfPassword.PasswordChar = '\0';
                 error.SetError(txtbCfPassword, "Không bỏ trống");
-             
+                btTaoTaiKhoan.Enabled = false;
+                btTaoTaiKhoan.ForeColor = Color.DarkGray;
+                btTaoTaiKhoan.BackColor = Color.Gray;
+
             }
             else if(txtbCfPassword.Text!=txtbPassword.Text)
             {
-                MessageBox.Show("Mật Khẩu Không Trùng Khớp");
                 btTaoTaiKhoan.Enabled = false;
+                btTaoTaiKhoan.ForeColor = Color.DarkGray;
+                btTaoTaiKhoan.BackColor = Color.Gray;
+                MessageBox.Show("Mật Khẩu Không Trùng Khớp");
             }
             else
             {
-                error.Clear();
                 btTaoTaiKhoan.Enabled = true;
+                error.Clear();
+                btTaoTaiKhoan.ForeColor = Color.Red;
+                btTaoTaiKhoan.BackColor = Color.Yellow;
             }
 
         }
@@ -273,31 +312,39 @@ namespace btlon
 
         private void btTaoTaiKhoan_Click(object sender, EventArgs e)
         {
-            conn = new SqlConnection(string_conn);
-            String qr = "INSERT INTO [dbo].[KhachHang]([Email],[hoTen],[Sdt],[DiaChi],[gioiTinh],[ngaySinh],[password]) VALUES" +
-                "(N'"+txtbEmail.Text+"', N'"+txtbHoTen.Text+"', '"+txtbSĐT.Text+"', N'"+textBoxDc.Text+"', N'"+gt+"', '"+dateTimePickerNgaySinh.Value.ToString("dd/MM/yyyy")+"', '"+txtbCfPassword.Text+"')";
-            try
+            if(txtbEmail.Text!="")
             {
-                SqlCommand cmmd = new SqlCommand(qr, conn);
-                conn.Open();
-                cmmd.ExecuteNonQuery();
-            }
-            catch (SqlException err)
-            {
+                conn = new SqlConnection(string_conn);
+                String qr = "INSERT INTO [dbo].[KhachHang]([Email],[hoTen],[Sdt],[DiaChi],[gioiTinh],[ngaySinh],[password]) VALUES" +
+                    "(N'" + txtbEmail.Text + "', N'" + txtbHoTen.Text + "', '" + txtbSĐT.Text + "', N'" + textBoxDc.Text + "', N'" + gt + "', '" + dateTimePickerNgaySinh.Value.ToString("dd/MM/yyyy") + "', '" + txtbCfPassword.Text + "')";
+                try
+                {
+                    SqlCommand cmmd = new SqlCommand(qr, conn);
+                    conn.Open();
+                    cmmd.ExecuteNonQuery();
+                }
+                catch (SqlException err)
+                {
 
-                MessageBox.Show("Tạo Tài Khoản thất bại"+err.ToString());
-                conn.Close();
-            }
-            finally
+                    MessageBox.Show("Tạo Tài Khoản thất bại" + err.ToString());
+                    conn.Close();
+                }
+                finally
+                {
+                    conn.Close();
+                    MessageBox.Show("Tạo tài khoản thành công");
+                    Form1 f = new Form1();
+                    f.getProp(txtbHoTen.Text, txtbSĐT.Text);
+                    f.ShowDialog();
+                    this.Close();
+                }
+            }    
+            else
             {
-                conn.Close();
-                MessageBox.Show("Tạo tài khoản thành công");
+                MessageBox.Show("Không Được Bỏ Trống Email và Password");
+            }    
 
-                Form1 f = new Form1();
-                f.getProp(txtbHoTen.Text,txtbSĐT.Text);
-                f.ShowDialog();
-                this.Close();
-            }
+           
             
         }
 
@@ -321,6 +368,18 @@ namespace btlon
             {
                 e.Handled = true;
                 MessageBox.Show("chi duoc nhap chu so");
+            }
+        }
+
+        private void SignUp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btTaoTaiKhoan_Click(sender, e);
+            }
+            if (e.KeyChar == Convert.ToChar(Keys.Escape))
+            {
+                this.Close();
             }
         }
     }

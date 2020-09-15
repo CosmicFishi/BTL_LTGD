@@ -257,11 +257,19 @@ namespace btlon
         {
             SignUp sg = new SignUp();
             sg.ShowDialog();
+            this.Close();
         }
 
         private void Login_KeyPress(object sender, KeyPressEventArgs e)
         { 
-
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btLogin_Click(sender, e);
+            }    
+           if(e.KeyChar == Convert.ToChar(Keys.Escape))
+            {
+                this.Close();
+            }    
         }
     }
 }

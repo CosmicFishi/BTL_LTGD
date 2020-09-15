@@ -65,7 +65,7 @@
             this.btTaoTaiKhoan.Location = new System.Drawing.Point(76, 448);
             this.btTaoTaiKhoan.Name = "btTaoTaiKhoan";
             this.btTaoTaiKhoan.Size = new System.Drawing.Size(248, 31);
-            this.btTaoTaiKhoan.TabIndex = 27;
+            this.btTaoTaiKhoan.TabIndex = 12;
             this.btTaoTaiKhoan.Text = "Tạo Tài Khoản";
             this.btTaoTaiKhoan.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btTaoTaiKhoan.UseVisualStyleBackColor = false;
@@ -78,7 +78,7 @@
             this.checkBoxShowPassword.Location = new System.Drawing.Point(11, 419);
             this.checkBoxShowPassword.Name = "checkBoxShowPassword";
             this.checkBoxShowPassword.Size = new System.Drawing.Size(130, 23);
-            this.checkBoxShowPassword.TabIndex = 26;
+            this.checkBoxShowPassword.TabIndex = 11;
             this.checkBoxShowPassword.Text = "Hiện Mật Khẩu";
             this.checkBoxShowPassword.UseVisualStyleBackColor = true;
             this.checkBoxShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPassword_CheckedChanged);
@@ -94,7 +94,7 @@
             this.comboBoxNam.Location = new System.Drawing.Point(313, 366);
             this.comboBoxNam.Name = "comboBoxNam";
             this.comboBoxNam.Size = new System.Drawing.Size(83, 25);
-            this.comboBoxNam.TabIndex = 25;
+            this.comboBoxNam.TabIndex = 10;
             this.comboBoxNam.Text = "Năm";
             this.comboBoxNam.SelectedIndexChanged += new System.EventHandler(this.comboBoxNam_SelectedIndexChanged);
             // 
@@ -107,7 +107,7 @@
             this.comboBoxThang.Location = new System.Drawing.Point(224, 366);
             this.comboBoxThang.Name = "comboBoxThang";
             this.comboBoxThang.Size = new System.Drawing.Size(83, 25);
-            this.comboBoxThang.TabIndex = 24;
+            this.comboBoxThang.TabIndex = 9;
             this.comboBoxThang.Text = "Tháng";
             this.comboBoxThang.SelectedIndexChanged += new System.EventHandler(this.comboBoxThang_SelectedIndexChanged);
             // 
@@ -121,7 +121,7 @@
             this.comboBoxNgay.Location = new System.Drawing.Point(135, 366);
             this.comboBoxNgay.Name = "comboBoxNgay";
             this.comboBoxNgay.Size = new System.Drawing.Size(83, 25);
-            this.comboBoxNgay.TabIndex = 23;
+            this.comboBoxNgay.TabIndex = 8;
             this.comboBoxNgay.Text = "Ngày";
             this.comboBoxNgay.ValueMember = "none";
             this.comboBoxNgay.SelectedIndexChanged += new System.EventHandler(this.comboBoxNgay_SelectedIndexChanged);
@@ -146,7 +146,7 @@
             this.radioButtonNam.Location = new System.Drawing.Point(146, 328);
             this.radioButtonNam.Name = "radioButtonNam";
             this.radioButtonNam.Size = new System.Drawing.Size(55, 21);
-            this.radioButtonNam.TabIndex = 21;
+            this.radioButtonNam.TabIndex = 7;
             this.radioButtonNam.TabStop = true;
             this.radioButtonNam.Text = "Nam";
             this.radioButtonNam.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@
             this.txtbCfPassword.Location = new System.Drawing.Point(148, 273);
             this.txtbCfPassword.Name = "txtbCfPassword";
             this.txtbCfPassword.Size = new System.Drawing.Size(248, 26);
-            this.txtbCfPassword.TabIndex = 19;
+            this.txtbCfPassword.TabIndex = 6;
             this.txtbCfPassword.Enter += new System.EventHandler(this.txtbCfPassword_Enter);
             this.txtbCfPassword.Leave += new System.EventHandler(this.txtbCfPassword_Leave);
             // 
@@ -168,7 +168,7 @@
             this.txtbPassword.Location = new System.Drawing.Point(148, 228);
             this.txtbPassword.Name = "txtbPassword";
             this.txtbPassword.Size = new System.Drawing.Size(248, 26);
-            this.txtbPassword.TabIndex = 20;
+            this.txtbPassword.TabIndex = 5;
             this.txtbPassword.Enter += new System.EventHandler(this.txtbPassword_Enter);
             this.txtbPassword.Leave += new System.EventHandler(this.txtbPassword_Leave);
             // 
@@ -178,7 +178,7 @@
             this.txtbEmail.Location = new System.Drawing.Point(148, 151);
             this.txtbEmail.Name = "txtbEmail";
             this.txtbEmail.Size = new System.Drawing.Size(248, 26);
-            this.txtbEmail.TabIndex = 18;
+            this.txtbEmail.TabIndex = 3;
             this.txtbEmail.Enter += new System.EventHandler(this.txtbEmail_Enter);
             this.txtbEmail.Leave += new System.EventHandler(this.txtbEmail_Leave);
             // 
@@ -188,7 +188,7 @@
             this.txtbSĐT.Location = new System.Drawing.Point(148, 117);
             this.txtbSĐT.Name = "txtbSĐT";
             this.txtbSĐT.Size = new System.Drawing.Size(248, 26);
-            this.txtbSĐT.TabIndex = 17;
+            this.txtbSĐT.TabIndex = 2;
             this.txtbSĐT.Enter += new System.EventHandler(this.txtbSĐT_Enter);
             this.txtbSĐT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbSĐT_KeyPress);
             this.txtbSĐT.Leave += new System.EventHandler(this.txtbSĐT_Leave);
@@ -199,7 +199,7 @@
             this.txtbHoTen.Location = new System.Drawing.Point(148, 79);
             this.txtbHoTen.Name = "txtbHoTen";
             this.txtbHoTen.Size = new System.Drawing.Size(248, 26);
-            this.txtbHoTen.TabIndex = 16;
+            this.txtbHoTen.TabIndex = 1;
             this.txtbHoTen.Enter += new System.EventHandler(this.txtbHoTen_Enter);
             this.txtbHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbHoTen_KeyPress);
             this.txtbHoTen.Leave += new System.EventHandler(this.txtbHoTen_Leave);
@@ -315,7 +315,7 @@
             this.textBoxDc.Location = new System.Drawing.Point(148, 185);
             this.textBoxDc.Name = "textBoxDc";
             this.textBoxDc.Size = new System.Drawing.Size(248, 26);
-            this.textBoxDc.TabIndex = 30;
+            this.textBoxDc.TabIndex = 4;
             // 
             // label6
             // 
@@ -356,11 +356,13 @@
             this.Controls.Add(this.lbSĐT);
             this.Controls.Add(this.lbHoTen);
             this.Controls.Add(this.lbTitle);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "SignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Up";
             this.Load += new System.EventHandler(this.SignUp_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SignUp_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
