@@ -24,20 +24,29 @@ namespace btlon
             String string_conn =
                 @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+Application.StartupPath + @"\" + "QLKH.mdf"+";Integrated Security=True";
             SqlConnection conn = new SqlConnection(string_conn);
-            conn.Open();
-            String qr = "Select * from KhachHang where Email='" + txtBoxAccount.Text + "' and password = '" + txtBoxPassword.Text + "';";
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(qr, conn);
-            DataTable dttb = new DataTable();
-            dataAdapter.Fill(dttb);
-            if (dttb.Rows.Count == 1)
+            try
             {
-                foreach (DataRow dr in dttb.Rows)
+                conn.Open();
+                String qr = "Select * from KhachHang where Email='" + txtBoxAccount.Text + "' and password = '" + txtBoxPassword.Text + "';";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(qr, conn);
+                DataTable dttb = new DataTable();
+                dataAdapter.Fill(dttb);
+                if (dttb.Rows.Count == 1)
                 {
-                    sdt = dr["Sdt"].ToString();
+                    foreach (DataRow dr in dttb.Rows)
+                    {
+                        sdt = dr["Sdt"].ToString();
+                    }
+                    return true;
                 }
-                return true;
+                conn.Close();
+                return false;
             }
-            conn.Close();
+            catch (SqlException er)
+            {
+
+                MessageBox.Show(er.ToString());
+            }
             return false;
         }
         public Boolean checkAccountAdmin()
