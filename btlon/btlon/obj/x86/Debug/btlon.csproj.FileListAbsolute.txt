@@ -21,7 +21,6 @@ D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.exe
 D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.pdb
 D:\Documents\github\BTL_LTGD\btlon\btlon\bin\Debug\btlon.exe
 D:\Documents\github\BTL_LTGD\btlon\btlon\bin\Debug\btlon.pdb
-D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csprojResolveAssemblyReference.cache
 D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Form1.resources
 D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Login.resources
 D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.Properties.Resources.resources
@@ -54,3 +53,5 @@ D:\BTL_LTGD\btlon\btlon\bin\Debug\Data\QLKH_log.ldf
 D:\Documents\github\BTL_LTGD\btlon\btlon\bin\Debug\btlon.exe.config
 D:\Documents\github\BTL_LTGD\btlon\btlon\bin\Debug\Data\QLKH.mdf
 D:\Documents\github\BTL_LTGD\btlon\btlon\bin\Debug\Data\QLKH_log.ldf
+D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csprojAssemblyReference.cache
+D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csproj.CoreCompileInputs.cache

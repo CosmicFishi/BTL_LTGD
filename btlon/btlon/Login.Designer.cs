@@ -113,9 +113,9 @@
             this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(431, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 23);
+            this.label2.Size = new System.Drawing.Size(56, 23);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Email/SĐT";
+            this.label2.Text = "Email:";
             // 
             // label3
             // 
@@ -180,9 +180,9 @@
             this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(452, 232);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(236, 23);
+            this.label6.Size = new System.Drawing.Size(242, 23);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Nếu chưa có tài khoải thì bấm";
+            this.label6.Text = "Nếu chưa có tài khoản thì bấm";
             // 
             // linkLabel1
             // 

@@ -15,7 +15,7 @@ namespace btlon
         private gioHang1 gh = new gioHang1();
 
         string tenTK = "nope";
-        int soDT = 0;
+        string soDT = "";
         string gioithieu;
         string baohanh;
         string doitra;
@@ -80,9 +80,10 @@ namespace btlon
             tvMenu.Nodes[1].Expand();
         }
 
-        public void getProp(string ten, int sdt){
+        public void getProp(string ten, string sdt){
             tenTK = ten;
             soDT = sdt;
+            //MessageBox.Show(sdt.ToString());
             if (tenTK == "")
                 lbAccount.Text = "Nope Account";
             else lbAccount.Text = tenTK;
@@ -276,5 +277,9 @@ namespace btlon
             lbThem.Visible = false;
         }
 
+        private void lbAccount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

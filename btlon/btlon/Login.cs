@@ -34,6 +34,7 @@ namespace btlon
                 foreach (DataRow dr in dttb.Rows)
                 {
                     sdt = dr["Sdt"].ToString();
+                    //MessageBox.Show(sdt.ToString());
                 }
                 return true;
             }
@@ -44,7 +45,7 @@ namespace btlon
         {
             String string_conn =
                @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
-            MessageBox.Show(string_conn);
+            //MessageBox.Show(string_conn);
             SqlConnection conn = new SqlConnection(string_conn);
             conn.Open();
             String qr = "Select * from Admin  where tk='" + txtBoxAccount.Text + "' and pass = '" + txtBoxPassword.Text + "';";
@@ -143,6 +144,7 @@ namespace btlon
             }
         }
 
+
         private void btLogin_Click(object sender, EventArgs e)
         {
             if (checkAccountAdmin() == true)
@@ -158,6 +160,25 @@ namespace btlon
                 MessageBox.Show("Đăng nhập thành công");
                 this.Hide();
                 Form1 f = new Form1();
+
+                //tạo ra connection
+                String string_conn =
+               @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
+                SqlConnection conn = new SqlConnection(string_conn);
+                conn.Open();
+                String qr = "Select * from KhachHang where Email='" + txtBoxAccount.Text + "' and password = '" + txtBoxPassword.Text + "';";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(qr, conn);
+                DataTable dttb = new DataTable();
+                dataAdapter.Fill(dttb);
+
+                if (dttb.Rows.Count == 1)
+                {
+                    foreach (DataRow dr in dttb.Rows)
+                    {
+                        f.getProp(dr["hoTen"].ToString(), sdt);
+                    }
+                }
+
                 f.ShowDialog();
                 this.Close();
             }
@@ -166,6 +187,59 @@ namespace btlon
                 MessageBox.Show("Tài Khoản Hoặc Mật Khẩu Của Bạn Đã Sai");
             }
 
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if(keyData == Keys.Enter)
+            {
+                if (checkAccountAdmin() == true)
+                {
+                    this.Hide();
+                    QuanLyKhachHang qlkh = new QuanLyKhachHang();
+                    qlkh.ShowDialog();
+                    this.Close();
+                }
+                else if (checkDangNhap() == true)
+                {
+                    email = txtBoxAccount.Text;
+                    MessageBox.Show("Đăng nhập thành công");
+                    this.Hide();
+                    Form1 f = new Form1();
+
+                    //tạo ra connection
+                    String string_conn =
+                   @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
+                    SqlConnection conn = new SqlConnection(string_conn);
+                    conn.Open();
+                    String qr = "Select * from KhachHang where Email='" + txtBoxAccount.Text + "' and password = '" + txtBoxPassword.Text + "';";
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(qr, conn);
+                    DataTable dttb = new DataTable();
+                    dataAdapter.Fill(dttb);
+
+                    if (dttb.Rows.Count == 1)
+                    {
+                        foreach (DataRow dr in dttb.Rows)
+                        {
+                            f.getProp(dr["hoTen"].ToString(), sdt);
+                        }
+                    }
+
+                    f.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Tài Khoản Hoặc Mật Khẩu Của Bạn Đã Sai");
+                }
+                return true;
+            }
+            if(keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessDialogKey(keyData);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
