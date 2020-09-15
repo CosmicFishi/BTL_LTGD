@@ -47,11 +47,11 @@ namespace btlon
             dtad.Fill(dttb);
             dataGridView1.DataSource = dttb;
         }
-        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangeAdminPassword changePassword = new ChangeAdminPassword();
-            changePassword.ShowDialog();
-        }
+        //private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    ChangeAdminPassword changePassword = new ChangeAdminPassword();
+        //    changePassword.ShowDialog();
+        //}
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
