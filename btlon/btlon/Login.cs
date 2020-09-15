@@ -44,6 +44,7 @@ namespace btlon
         {
             String string_conn =
                @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
+            MessageBox.Show(string_conn);
             SqlConnection conn = new SqlConnection(string_conn);
             conn.Open();
             String qr = "Select * from Admin  where tk='" + txtBoxAccount.Text + "' and pass = '" + txtBoxPassword.Text + "';";

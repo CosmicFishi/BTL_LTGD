@@ -51,3 +51,6 @@ D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.SignUp.resources
 D:\BTL_LTGD\btlon\btlon\bin\Debug\btlon.exe.config
 D:\BTL_LTGD\btlon\btlon\bin\Debug\Data\QLKH.mdf
 D:\BTL_LTGD\btlon\btlon\bin\Debug\Data\QLKH_log.ldf
+D:\Documents\github\BTL_LTGD\btlon\btlon\bin\Debug\btlon.exe.config
+D:\Documents\github\BTL_LTGD\btlon\btlon\bin\Debug\Data\QLKH.mdf
+D:\Documents\github\BTL_LTGD\btlon\btlon\bin\Debug\Data\QLKH_log.ldf
