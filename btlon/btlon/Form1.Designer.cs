@@ -205,7 +205,7 @@
             this.pnDetail.Controls.Add(this.lbTenSp);
             this.pnDetail.Controls.Add(this.label3);
             this.pnDetail.Controls.Add(this.label2);
-            this.pnDetail.Location = new System.Drawing.Point(301, 642);
+            this.pnDetail.Location = new System.Drawing.Point(301, 630);
             this.pnDetail.Name = "pnDetail";
             this.pnDetail.Size = new System.Drawing.Size(895, 114);
             this.pnDetail.TabIndex = 9;
@@ -214,7 +214,7 @@
             // 
             this.btnAddCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCart.Location = new System.Drawing.Point(466, 71);
+            this.btnAddCart.Location = new System.Drawing.Point(466, 59);
             this.btnAddCart.Name = "btnAddCart";
             this.btnAddCart.Size = new System.Drawing.Size(203, 31);
             this.btnAddCart.TabIndex = 15;
@@ -227,7 +227,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(470, 45);
+            this.label8.Location = new System.Drawing.Point(470, 33);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 18);
             this.label8.TabIndex = 14;
@@ -236,7 +236,7 @@
             // numberSp
             // 
             this.numberSp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numberSp.Location = new System.Drawing.Point(549, 44);
+            this.numberSp.Location = new System.Drawing.Point(549, 32);
             this.numberSp.Name = "numberSp";
             this.numberSp.Size = new System.Drawing.Size(120, 23);
             this.numberSp.TabIndex = 13;
@@ -251,7 +251,7 @@
             // 
             this.lbGiaSp.AutoSize = true;
             this.lbGiaSp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGiaSp.Location = new System.Drawing.Point(249, 81);
+            this.lbGiaSp.Location = new System.Drawing.Point(249, 69);
             this.lbGiaSp.Name = "lbGiaSp";
             this.lbGiaSp.Size = new System.Drawing.Size(32, 18);
             this.lbGiaSp.TabIndex = 12;
@@ -261,7 +261,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(189, 81);
+            this.label6.Location = new System.Drawing.Point(189, 69);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 18);
             this.label6.TabIndex = 11;
@@ -271,7 +271,7 @@
             // 
             this.lbTenSp.AutoSize = true;
             this.lbTenSp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenSp.Location = new System.Drawing.Point(250, 50);
+            this.lbTenSp.Location = new System.Drawing.Point(250, 38);
             this.lbTenSp.Name = "lbTenSp";
             this.lbTenSp.Size = new System.Drawing.Size(32, 18);
             this.lbTenSp.TabIndex = 10;
@@ -281,7 +281,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(187, 50);
+            this.label3.Location = new System.Drawing.Point(187, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 18);
             this.label3.TabIndex = 9;
@@ -361,14 +361,14 @@
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi Mật Khẩu";
             this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
