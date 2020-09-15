@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,9 @@ using System.Windows.Forms;
 
 namespace btlon
 {
-    public partial class ChangeAdminPassword : Form
+    public partial class ChangePassword : Form
     {
-        public ChangeAdminPassword()
+        public ChangePassword()
         {
             InitializeComponent();
         }
@@ -44,7 +45,27 @@ namespace btlon
         }
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
+            String string_conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
+            String update_String = "UPDATE [dbo].[KhachHang] SET password = '" + textBoxPassword.Text + "' where Email=N'" + Login.email + "';";
+            SqlConnection conn = new SqlConnection(string_conn);
+            try
+            {
+                conn.Open();
+                SqlCommand cmmd = new SqlCommand(update_String, conn);
+                cmmd.ExecuteNonQuery();
+            }
+            catch (SqlException err)
+            {
 
+                MessageBox.Show(err.ToString());
+                conn.Close();
+            }
+            finally
+            {
+                conn.Close();
+                MessageBox.Show("Đổi Mật Khẩu Thành Công");
+                this.Close();
+            }
         }
 
         private void textBoxConfirmPassword_TextChanged(object sender, EventArgs e)

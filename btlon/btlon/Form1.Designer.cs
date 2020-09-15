@@ -51,11 +51,17 @@
             this.txtContent = new System.Windows.Forms.TextBox();
             this.lbThem = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.càiĐặtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberSp)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,11 +72,11 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.tvMenu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.MinimumSize = new System.Drawing.Size(300, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 757);
+            this.panel1.Size = new System.Drawing.Size(300, 721);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -79,7 +85,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-1, 671);
+            this.label1.Location = new System.Drawing.Point(-1, 635);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(296, 46);
             this.label1.TabIndex = 2;
@@ -333,13 +339,51 @@
             this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.càiĐặtToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1196, 24);
+            this.menuStrip1.TabIndex = 13;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // càiĐặtToolStripMenuItem
+            // 
+            this.càiĐặtToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.đổiMậtKhẩuToolStripMenuItem,
+            this.thoátToolStripMenuItem});
+            this.càiĐặtToolStripMenuItem.Name = "càiĐặtToolStripMenuItem";
+            this.càiĐặtToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.càiĐặtToolStripMenuItem.Text = "Cài Đặt";
+            // 
+            // đổiMậtKhẩuToolStripMenuItem
+            // 
+            this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi Mật Khẩu";
+            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
+            // 
+            // thoátToolStripMenuItem
+            // 
+            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1196, 757);
+            this.ClientSize = new System.Drawing.Size(1196, 745);
             this.Controls.Add(this.lbThem);
             this.Controls.Add(this.txtContent);
             this.Controls.Add(this.btnChangeView);
@@ -348,11 +392,14 @@
             this.Controls.Add(this.lvSp);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -362,6 +409,8 @@
             this.pnDetail.ResumeLayout(false);
             this.pnDetail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberSp)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,6 +440,11 @@
         private System.Windows.Forms.Label lbAccount;
         private System.Windows.Forms.Label lbThem;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem càiĐặtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

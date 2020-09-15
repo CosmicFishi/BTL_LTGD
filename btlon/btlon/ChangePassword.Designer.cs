@@ -1,6 +1,6 @@
 ﻿namespace btlon
 {
-    partial class ChangeAdminPassword
+    partial class ChangePassword
     {
         /// <summary>
         /// Required designer variable.
@@ -94,7 +94,7 @@
             this.buttonConfirm.UseVisualStyleBackColor = true;
             this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
-            // ChangeAdminPassword
+            // ChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,9 +108,9 @@
             this.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.Name = "ChangeAdminPassword";
+            this.Name = "ChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ChangeAdminPassword";
+            this.Text = "ChangePassword";
             this.Load += new System.EventHandler(this.ChangeAdminPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

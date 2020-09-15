@@ -88,7 +88,7 @@ namespace btlon
             }
             if (txtBoxAccount.Text == "")
             {
-                txtBoxAccount.Text = "Nhập Email hoặc Số Điện Thoại";
+                txtBoxAccount.Text = "Nhập Email";
                 txtBoxAccount.ForeColor = SystemColors.ControlDark;
             }
         }
@@ -118,7 +118,7 @@ namespace btlon
 
         private void txtBoxAccount_Enter(object sender, EventArgs e)
         {
-            if (txtBoxAccount.Text == "Nhập Email hoặc Số Điện Thoại")
+            if (txtBoxAccount.Text == "Nhập Email")
             {
                 txtBoxAccount.Text = "";
                 txtBoxAccount.ForeColor = Color.Black;
@@ -130,7 +130,7 @@ namespace btlon
         {
             if (txtBoxAccount.Text == "")
             {
-                txtBoxAccount.Text = "Nhập Email hoặc Số Điện Thoại";
+                txtBoxAccount.Text = "Nhập Email";
                 txtBoxAccount.ForeColor = SystemColors.ControlDark;
             }
         }
