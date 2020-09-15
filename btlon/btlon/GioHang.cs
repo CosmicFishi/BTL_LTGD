@@ -78,6 +78,11 @@ namespace btlon
 
         private void listView1_ItemCheck(object sender, ItemCheckEventArgs e)
         {
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             listView1.Items.Clear();
         }
     }
