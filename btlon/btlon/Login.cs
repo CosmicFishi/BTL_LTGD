@@ -34,17 +34,13 @@ namespace btlon
                 dataAdapter.Fill(dttb);
                 if (dttb.Rows.Count == 1)
                 {
-<<<<<<< HEAD
-                    sdt = dr["Sdt"].ToString();
                     //MessageBox.Show(sdt.ToString());
-=======
                     foreach (DataRow dr in dttb.Rows)
                     {
                         sdt = dr["Sdt"].ToString();
                         ten = dr["hoTen"].ToString();
                     }
                     return true;
->>>>>>> e04692ba240398f45a724b3d9c6623f03ee42744
                 }
                 conn.Close();
                 return false;
