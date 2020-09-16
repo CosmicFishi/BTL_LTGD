@@ -118,6 +118,7 @@
             this.colPrice,
             this.columnHeader1});
             this.listView1.FullRowSelect = true;
+            this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(15, 121);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(521, 311);
@@ -166,7 +167,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Xóa";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnThanhToan_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 

@@ -66,8 +66,7 @@ namespace btlon
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
-                listView1.Items.Remove(listView1.SelectedItems[0]);
+            MessageBox.Show("Đã thanh toán thành công", "Thanh toán", MessageBoxButtons.OK);
         }
 
         private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
@@ -83,7 +82,19 @@ namespace btlon
 
         private void button2_Click(object sender, EventArgs e)
         {
-            listView1.Items.Clear();
+            if (MessageBox.Show("Xóa hết trong giỏ hàng?", "Xóa tất cả trong giỏ hàng", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                listView1.Items.Clear();
+                tinhTongTien();
+            }
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+                listView1.Items.Remove(listView1.SelectedItems[0]);
+            tinhTongTien();
         }
     }
 }

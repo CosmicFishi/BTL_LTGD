@@ -1,0 +1,17 @@
+Có hai loại tài khoản để đăng nhập: 
++ admin: (email)Admin1, (mật khẩu)Admin
++ Người dùng 
+
+Tài khoản admin có thể truy cập vào database chứa thông tin người dùng để chỉnh sửa, 
+thay đổi hay cập nhật thông tin tài khoản.
+
+Tài khoản người dùng có thể tạo mới thông qua nút ĐĂNG KÝ ở form login đầu tiên hoặc
+là đăng nhập bằng tài khoản hiện có bên trong database. Thông tin người dùng sẽ được 
+lưu vào database. Người dùng có thể thay đổi mật khẩu của họ thông qua menu cài đặt.
+
+Form1 là form hiển thị thông tin hàng hóa. Hàng hóa có thể thêm vào trong giỏ hàng
+thông qua nút thêm vào giỏ hàng. 
+
+Form gioHang sẽ hiện ra những hàng hóa mà người dùng đã chọn sau đó sẽ tự động tính
+ra tổng tiền cho toàn bộ hàng hóa. Người dùng có thể xóa hoặc là xóa hết (clear)
+các hàng hóa bên trong giỏ hàng.  
