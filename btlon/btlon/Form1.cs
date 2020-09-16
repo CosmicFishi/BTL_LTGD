@@ -291,5 +291,18 @@ namespace btlon
             ChangePassword changePassword = new ChangePassword();
             changePassword.ShowDialog();
         }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login lg = new Login();
+            lg.ShowDialog();
+        }
+
+        private void thôngTinChiTiếtKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongTinKhachHang ttkh = new ThongTinKhachHang();
+            ttkh.ShowDialog();
+        }
     }
 }

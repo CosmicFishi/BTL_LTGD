@@ -20,6 +20,9 @@ namespace btlon
         public static string email; // sdt dùng để gán qua form1
         public static string sdt;// email dùng để gán qua form 1
         public static string ten;
+        public static string diaChi;
+        public static string ngaySinh;
+        public static string gt;
         public Boolean checkDangNhap()
         {
             String string_conn =
@@ -39,6 +42,9 @@ namespace btlon
                     {
                         sdt = dr["Sdt"].ToString();
                         ten = dr["hoTen"].ToString();
+                        ngaySinh = dr["ngaySinh"].ToString();
+                        diaChi = dr["DiaChi"].ToString();
+                        gt = dr["gioiTinh"].ToString();
                     }
                     return true;
                 }
@@ -171,7 +177,6 @@ namespace btlon
                 MessageBox.Show("Đăng nhập thành công");
                 this.Hide();
                 Form1 f = new Form1();
-
                 //tạo ra connection
                 String string_conn =
                @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
@@ -217,7 +222,6 @@ namespace btlon
                     MessageBox.Show("Đăng nhập thành công");
                     this.Hide();
                     Form1 f = new Form1();
-
                     //tạo ra connection
                     String string_conn =
                    @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";

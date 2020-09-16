@@ -386,5 +386,19 @@ namespace btlon
                 this.Close();
             }
         }
+
+        private void textBoxDc_Leave(object sender, EventArgs e)
+        {
+            if (textBoxDc.Text == "") 
+            {
+                error.SetError(textBoxDc,"Không được bỏ trống");
+                btTaoTaiKhoan.Enabled = false;
+            }
+            else
+            {
+                error.Clear();
+                btTaoTaiKhoan.Enabled = true;
+            }
+        }
     }
 }

@@ -55,3 +55,5 @@ D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csprojAssemblyRefer
 D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.csproj.CoreCompileInputs.cache
 D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.ChangePassword.resources
 D:\Documents\github\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.ChangePassword.resources
+D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.ThongTinKhachHang.resources
+D:\BTL_LTGD\btlon\btlon\obj\x86\Debug\btlon.SuaThongTinKhachHang.resources

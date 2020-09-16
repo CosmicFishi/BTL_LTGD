@@ -317,6 +317,7 @@
             this.textBoxDc.Name = "textBoxDc";
             this.textBoxDc.Size = new System.Drawing.Size(248, 26);
             this.textBoxDc.TabIndex = 4;
+            this.textBoxDc.Leave += new System.EventHandler(this.textBoxDc_Leave);
             // 
             // label6
             // 
