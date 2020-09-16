@@ -269,6 +269,12 @@ namespace btlon
         {
             if (MessageBox.Show("Ban co chac muon dong??", "Dong form", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 e.Cancel = true;
+            else
+            {
+                this.Hide();
+                Login lg = new Login();
+                lg.ShowDialog();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -292,12 +298,6 @@ namespace btlon
             changePassword.ShowDialog();
         }
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Login lg = new Login();
-            lg.ShowDialog();
-        }
 
         private void thôngTinChiTiếtKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {

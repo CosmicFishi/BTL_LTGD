@@ -46,7 +46,7 @@ namespace btlon
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
             String string_conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
-            String update_String = "UPDATE [dbo].[KhachHang] SET password = '" + textBoxPassword.Text + "' where Email=N'" + Login.email + "';";
+            String update_String = "UPDATE [dbo].[KhachHang] SET password = '" + textBoxPassword.Text + "' where Email=N'" + ThongTinKhachHang.email + "';";
             SqlConnection conn = new SqlConnection(string_conn);
             try
             {

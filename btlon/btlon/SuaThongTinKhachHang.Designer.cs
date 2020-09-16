@@ -168,6 +168,7 @@
             this.radioButtonNam.TabStop = true;
             this.radioButtonNam.Text = "Nam";
             this.radioButtonNam.UseVisualStyleBackColor = true;
+            this.radioButtonNam.CheckedChanged += new System.EventHandler(this.radioButtonNam_CheckedChanged);
             // 
             // label5
             // 
@@ -271,6 +272,7 @@
             this.Controls.Add(this.lbHoTen);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SuaThongTinKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SuaThongTinKhachHang";
             this.Load += new System.EventHandler(this.SuaThongTinKhachHang_Load);
             this.ResumeLayout(false);

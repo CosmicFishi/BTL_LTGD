@@ -39,20 +39,21 @@ namespace btlon
             {
                 comboBoxNam.Items.Add(i);
             }
-            if (Login.gt.IndexOf("Nam") > -1)
+            if (ThongTinKhachHang.gt == "Nam")
             {
                 radioButtonNam.Checked = true;
+                gt = "Nam";
             }
             else
             {
                 radioButtonNu.Checked = true;
+                gt = "Nữ";
             }
-            gt = ThongTinKhachHang.gt;
-            txtbEmail.Text = Login.email;
-            txtbHoTen.Text = Login.ten;
-            txtbSĐT.Text = Login.sdt;
-            dateTimePickerNgaySinh.Text = Login.ngaySinh;
-            textBoxDc.Text = Login.diaChi;
+            txtbEmail.Text = ThongTinKhachHang.email;
+            txtbHoTen.Text = ThongTinKhachHang.ten;
+            txtbSĐT.Text = ThongTinKhachHang.std;
+            dateTimePickerNgaySinh.Text = ThongTinKhachHang.ns;
+            textBoxDc.Text = ThongTinKhachHang.dc;
         }
 
         private void buttonSua_Click(object sender, EventArgs e)
@@ -71,7 +72,8 @@ namespace btlon
                 conn.Open();
                 try
                 {
-                    String update_String = "UPDATE [dbo].[KhachHang] SET hoTen=N'" + txtbHoTen.Text + "',Sdt =N'" + txtbSĐT.Text + "',DiaChi =N'" + textBoxDc.Text + "',gioiTinh =N'" + gt + "' ,ngaySinh ='" + dateTimePickerNgaySinh.Value.ToString("dd/MM/yyyy") + "'  where Email=N'" + Login.email + "';";
+                    
+                    String update_String = "UPDATE [dbo].[KhachHang] SET hoTen=N'" + txtbHoTen.Text + "',Sdt =N'" + txtbSĐT.Text + "',DiaChi =N'" + textBoxDc.Text + "',gioiTinh =N'" + gt + "' ,ngaySinh ='" + dateTimePickerNgaySinh.Value.ToString("dd/MM/yyyy") + "'  where Email=N'" + ThongTinKhachHang.email + "';";
                     SqlCommand cmmd = new SqlCommand(update_String, conn);
                     cmmd.ExecuteNonQuery();
 

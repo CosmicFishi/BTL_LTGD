@@ -336,6 +336,8 @@ namespace btlon
                 finally
                 {
                     conn.Close();
+                    ThongTinKhachHang ttkh = new ThongTinKhachHang();
+                    ttkh.getEmail(txtbEmail.Text);
                     MessageBox.Show("Tạo tài khoản thành công");
                     Form1 f = new Form1();
                     f.getProp(txtbHoTen.Text, txtbSĐT.Text);

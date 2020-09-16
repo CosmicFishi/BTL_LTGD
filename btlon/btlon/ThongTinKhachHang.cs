@@ -22,6 +22,11 @@ namespace btlon
         public static String std;
         public static String dc;
         public static String ns;
+        public void getEmail(String e)
+        {
+            email = e;
+        }
+        public static String email;
         private void ThongTinKhachHang_Load(object sender, EventArgs e)
         {
             String string_conn =
@@ -30,7 +35,7 @@ namespace btlon
             try
             {
                 conn.Open();
-                String qr = "Select * from KhachHang where Email='" + Login.email + "';";
+                String qr = "Select * from KhachHang where Email='" +email+ "';";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(qr, conn);
                 DataTable dttb = new DataTable();
                 dataAdapter.Fill(dttb);
@@ -47,8 +52,9 @@ namespace btlon
                     }
                 }
                 conn.Close();
-                lbE.Text = Login.email;
                 lbGt.Text = gt;
+                lbE.Text = email;
+               
 
             }
             catch(SqlException err)
@@ -58,7 +64,7 @@ namespace btlon
             ten = lbHT.Text;
             ns = lbNs.Text;
             dc = lbDc.Text;
-            std = lbSĐT.Text;
+            std = lbSdt.Text;
 
         }
 

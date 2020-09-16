@@ -17,7 +17,7 @@ namespace btlon
         {
             InitializeComponent();
         }
-        public static string email; // sdt dùng để gán qua form1
+ 
         public static string sdt;// email dùng để gán qua form 1
         public static string ten;
         public static string diaChi;
@@ -164,6 +164,7 @@ namespace btlon
 
         private void btLogin_Click(object sender, EventArgs e)
         {
+           
             if (checkAccountAdmin() == true)
             {
                 this.Hide();
@@ -173,7 +174,6 @@ namespace btlon
             }
             else if (checkDangNhap() == true)
             {
-                email = txtBoxAccount.Text;
                 MessageBox.Show("Đăng nhập thành công");
                 this.Hide();
                 Form1 f = new Form1();
@@ -218,7 +218,8 @@ namespace btlon
                 }
                 else if (checkDangNhap() == true)
                 {
-                    email = txtBoxAccount.Text;
+                    ThongTinKhachHang ttkh = new ThongTinKhachHang();
+                    ttkh.getEmail(txtBoxAccount.Text);
                     MessageBox.Show("Đăng nhập thành công");
                     this.Hide();
                     Form1 f = new Form1();
