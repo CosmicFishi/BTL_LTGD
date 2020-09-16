@@ -167,6 +167,7 @@
             this.txtbPassword.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbPassword.Location = new System.Drawing.Point(148, 228);
             this.txtbPassword.Name = "txtbPassword";
+            this.txtbPassword.PasswordChar = '*';
             this.txtbPassword.Size = new System.Drawing.Size(248, 26);
             this.txtbPassword.TabIndex = 5;
             this.txtbPassword.Enter += new System.EventHandler(this.txtbPassword_Enter);

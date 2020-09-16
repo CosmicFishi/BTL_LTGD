@@ -71,6 +71,7 @@ namespace btlon
             conn = new SqlConnection(string_conn);
             conn.Open();
             Loaddata();
+            dateTimePickerNgaySinh.Value = DateTime.Now;
         }
 
         private void QuanLyKhachHang_FormClosed(object sender, FormClosedEventArgs e)

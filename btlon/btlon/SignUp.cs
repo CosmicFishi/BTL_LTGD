@@ -77,6 +77,10 @@ namespace btlon
             btTaoTaiKhoan.Enabled = false;
             btTaoTaiKhoan.ForeColor = Color.DarkGray;
             btTaoTaiKhoan.BackColor = Color.Gray;
+            DateTime dt = DateTime.Now;
+            dateTimePickerNgaySinh.Text = dt.ToString("dd/MM/yyyy");
+
+
         }
 
         private void dateTimePickerNgaySinh_ValueChanged(object sender, EventArgs e)

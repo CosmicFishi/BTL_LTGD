@@ -101,7 +101,7 @@
             // 
             // btXoa
             // 
-            this.btXoa.Location = new System.Drawing.Point(233, 192);
+            this.btXoa.Location = new System.Drawing.Point(323, 192);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(114, 30);
             this.btXoa.TabIndex = 1;
@@ -111,7 +111,7 @@
             // 
             // btTimKiem
             // 
-            this.btTimKiem.Location = new System.Drawing.Point(397, 192);
+            this.btTimKiem.Location = new System.Drawing.Point(742, 100);
             this.btTimKiem.Name = "btTimKiem";
             this.btTimKiem.Size = new System.Drawing.Size(114, 30);
             this.btTimKiem.TabIndex = 1;
@@ -203,7 +203,7 @@
             this.txtbHoTen.Location = new System.Drawing.Point(103, 21);
             this.txtbHoTen.Name = "txtbHoTen";
             this.txtbHoTen.Size = new System.Drawing.Size(232, 26);
-            this.txtbHoTen.TabIndex = 35;
+            this.txtbHoTen.TabIndex = 1;
             // 
             // lbHoTen
             // 
@@ -246,7 +246,7 @@
             this.textBoxSDT.Location = new System.Drawing.Point(483, 59);
             this.textBoxSDT.Name = "textBoxSDT";
             this.textBoxSDT.Size = new System.Drawing.Size(232, 27);
-            this.textBoxSDT.TabIndex = 37;
+            this.textBoxSDT.TabIndex = 3;
             // 
             // label1
             // 
@@ -265,7 +265,7 @@
             this.textBoxEmail.Location = new System.Drawing.Point(483, 100);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(232, 26);
-            this.textBoxEmail.TabIndex = 35;
+            this.textBoxEmail.TabIndex = 4;
             // 
             // label2
             // 
@@ -284,7 +284,7 @@
             this.textBoxPassword.Location = new System.Drawing.Point(483, 132);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(232, 26);
-            this.textBoxPassword.TabIndex = 35;
+            this.textBoxPassword.TabIndex = 5;
             // 
             // buttonLoadLai
             // 
