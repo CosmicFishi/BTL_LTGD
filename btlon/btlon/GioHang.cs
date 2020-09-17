@@ -56,6 +56,7 @@ namespace btlon
         private void GioHang_Load(object sender, EventArgs e)
         {
             //Load lại thông tin khách khi sửa
+            //khi sửa thông tin nếu sửa vào số điện thoại hoặc tên thì sẽ load lại cập nhập đã sửa
             ThongTinKhachHang tt = new ThongTinKhachHang();
             tt.Show();
             tt.Hide();

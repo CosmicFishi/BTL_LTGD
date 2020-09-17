@@ -52,8 +52,6 @@ namespace btlon
                     }
                 }
                 conn.Close();
-                lbGt.Text = gt;
-                lbE.Text = email;
                
 
             }
@@ -65,6 +63,8 @@ namespace btlon
             ns = lbNs.Text;
             dc = lbDc.Text;
             std = lbSdt.Text;
+            lbGt.Text = gt;
+            lbE.Text = email;
 
         }
 

@@ -16,7 +16,7 @@ namespace btlon
         {
             InitializeComponent();
         }
-        String gt;
+        String gioiTinh;
         private void dateTimePickerNgaySinh_ValueChanged(object sender, EventArgs e)
         {
             comboBoxNgay.Text = dateTimePickerNgaySinh.Value.ToString("dd");
@@ -26,6 +26,16 @@ namespace btlon
 
         private void SuaThongTinKhachHang_Load(object sender, EventArgs e)
         {
+         
+            gioiTinh = ThongTinKhachHang.gt;
+            if (gioiTinh.IndexOf("Nam") > -1)
+            {
+                radioButtonNam.Checked = true;
+            }
+            else
+            {
+                radioButtonNu.Checked = true;
+            }
             for (int i = 1; i <= 12; i++)
             {
                 comboBoxThang.Items.Add(i);
@@ -38,16 +48,6 @@ namespace btlon
             for (int i = 1920; i <= 2020; i++)
             {
                 comboBoxNam.Items.Add(i);
-            }
-            if (ThongTinKhachHang.gt == "Nam")
-            {
-                radioButtonNam.Checked = true;
-                gt = "Nam";
-            }
-            else
-            {
-                radioButtonNu.Checked = true;
-                gt = "Nữ";
             }
             txtbEmail.Text = ThongTinKhachHang.email;
             txtbHoTen.Text = ThongTinKhachHang.ten;
@@ -73,7 +73,7 @@ namespace btlon
                 try
                 {
                     
-                    String update_String = "UPDATE [dbo].[KhachHang] SET hoTen=N'" + txtbHoTen.Text + "',Sdt =N'" + txtbSĐT.Text + "',DiaChi =N'" + textBoxDc.Text + "',gioiTinh =N'" + gt + "' ,ngaySinh ='" + dateTimePickerNgaySinh.Value.ToString("dd/MM/yyyy") + "'  where Email=N'" + ThongTinKhachHang.email + "';";
+                    String update_String = "UPDATE [dbo].[KhachHang] SET hoTen=N'" + txtbHoTen.Text + "',Sdt =N'" + txtbSĐT.Text + "',DiaChi =N'" + textBoxDc.Text + "',gioiTinh =N'" + gioiTinh + "' ,ngaySinh ='" + dateTimePickerNgaySinh.Value.ToString("dd/MM/yyyy") + "'  where Email=N'" + ThongTinKhachHang.email + "';";
                     SqlCommand cmmd = new SqlCommand(update_String, conn);
                     cmmd.ExecuteNonQuery();
 
@@ -102,11 +102,11 @@ namespace btlon
         {
             if(radioButtonNam.Checked)
             {
-                gt = "Nam";
+                gioiTinh = "Nam";
             }
             else
             {
-                gt = "Nữ";
+                gioiTinh = "Nữ";
             }
         }
     }
