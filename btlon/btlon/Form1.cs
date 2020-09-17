@@ -78,16 +78,18 @@ namespace btlon
             //set UI default
             //tvMenu.SelectedNode = tvMenu.Nodes[0].Nodes[0];
             tvMenu.Nodes[1].Expand();
+            //Load Thông Tin Khách Hàng 
         }
+        //public void getProp(string ten, string sdt)
+        //{
+        //    tenTK = ten;
+        //    soDT = sdt;
+        //    //MessageBox.Show(sdt.ToString());
+        //    if (tenTK == "")
+        //        lbAccount.Text = "Nope Account";
+        //    else lbAccount.Text = tenTK;
+        //}
 
-        public void getProp(string ten, string sdt){
-            tenTK = ten;
-            soDT = sdt;
-            //MessageBox.Show(sdt.ToString());
-            if (tenTK == "")
-                lbAccount.Text = "Nope Account";
-            else lbAccount.Text = tenTK;
-        }
         //---------------------Function---------------------
         void loadListSp(int id, List<SanPham> arr)
         {
@@ -228,8 +230,10 @@ namespace btlon
         //click btn gio hang
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            gh.TenTK = lbAccount.Text;
-            gh.SDT = soDT.ToString();
+            //gh.TenTK = lbAccount.Text;
+            gh.TenTK = ThongTinKhachHang.ten;
+            gh.SDT = ThongTinKhachHang.std;
+            //gh.SDT = soDT.ToString();
             gh.ShowDialog();
         }
 

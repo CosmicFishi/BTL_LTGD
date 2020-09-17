@@ -18,7 +18,7 @@ namespace btlon
             InitializeComponent();
         }
  
-        public static string sdt;// email dùng để gán qua form 1
+        public static string sdt;
         public static string ten;
         public static string diaChi;
         public static string ngaySinh;
@@ -174,27 +174,27 @@ namespace btlon
             }
             else if (checkDangNhap() == true)
             {
+                ThongTinKhachHang ttkh = new ThongTinKhachHang();
+                ttkh.getEmail(txtBoxAccount.Text);
                 MessageBox.Show("Đăng nhập thành công");
                 this.Hide();
                 Form1 f = new Form1();
                 //tạo ra connection
-                String string_conn =
-               @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
-                SqlConnection conn = new SqlConnection(string_conn);
-                conn.Open();
-                String qr = "Select * from KhachHang where Email='" + txtBoxAccount.Text + "' and password = '" + txtBoxPassword.Text + "';";
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(qr, conn);
-                DataTable dttb = new DataTable();
-                dataAdapter.Fill(dttb);
-
-                if (dttb.Rows.Count == 1)
-                {
-                    foreach (DataRow dr in dttb.Rows)
-                    {
-                        f.getProp(dr["hoTen"].ToString(), sdt);
-                    }
-                }
-
+               // String string_conn =
+               //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
+               // SqlConnection conn = new SqlConnection(string_conn);
+               // conn.Open();
+               // String qr = "Select * from KhachHang where Email='" + txtBoxAccount.Text + "' and password = '" + txtBoxPassword.Text + "';";
+               // SqlDataAdapter dataAdapter = new SqlDataAdapter(qr, conn);
+               // DataTable dttb = new DataTable();
+               // dataAdapter.Fill(dttb);
+               // if (dttb.Rows.Count == 1)
+               // {
+               //     //foreach (DataRow dr in dttb.Rows)
+               //     //{
+               //     //    f.getProp(dr["hoTen"].ToString(), sdt);
+               //     //}
+               // }
                 f.ShowDialog();
                 this.Close();
             }
@@ -223,24 +223,23 @@ namespace btlon
                     MessageBox.Show("Đăng nhập thành công");
                     this.Hide();
                     Form1 f = new Form1();
-                    //tạo ra connection
-                    String string_conn =
-                   @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
-                    SqlConnection conn = new SqlConnection(string_conn);
-                    conn.Open();
-                    String qr = "Select * from KhachHang where Email='" + txtBoxAccount.Text + "' and password = '" + txtBoxPassword.Text + "';";
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(qr, conn);
-                    DataTable dttb = new DataTable();
-                    dataAdapter.Fill(dttb);
+                    // //tạo ra connection
+                    // String string_conn =
+                    //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\" + "QLKH.mdf" + ";Integrated Security=True";
+                    // SqlConnection conn = new SqlConnection(string_conn);
+                    // conn.Open();
+                    // String qr = "Select * from KhachHang where Email='" + txtBoxAccount.Text + "' and password = '" + txtBoxPassword.Text + "';";
+                    // SqlDataAdapter dataAdapter = new SqlDataAdapter(qr, conn);
+                    // DataTable dttb = new DataTable();
+                    // dataAdapter.Fill(dttb);
 
-                    if (dttb.Rows.Count == 1)
-                    {
-                        foreach (DataRow dr in dttb.Rows)
-                        {
-                            f.getProp(dr["hoTen"].ToString(), sdt);
-                        }
-                    }
-
+                    // if (dttb.Rows.Count == 1)
+                    // {
+                    //     foreach (DataRow dr in dttb.Rows)
+                    //     {
+                    //         //f.getProp(dr["hoTen"].ToString(), sdt);
+                    //     }
+                    // }
                     f.ShowDialog();
                     this.Close();
                 }

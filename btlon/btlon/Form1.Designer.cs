@@ -34,7 +34,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tvMenu = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbAccount = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lvSp = new System.Windows.Forms.ListView();
             this.lbPagination = new System.Windows.Forms.Label();
@@ -131,25 +130,11 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.lbAccount);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(301, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(895, 69);
             this.panel2.TabIndex = 4;
-            // 
-            // lbAccount
-            // 
-            this.lbAccount.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
-            this.lbAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAccount.Location = new System.Drawing.Point(648, 23);
-            this.lbAccount.Name = "lbAccount";
-            this.lbAccount.Size = new System.Drawing.Size(158, 24);
-            this.lbAccount.TabIndex = 2;
-            this.lbAccount.Text = "ADMIN";
-            this.lbAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbAccount.Click += new System.EventHandler(this.lbAccount_Click);
             // 
             // pictureBox1
             // 
@@ -446,7 +431,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnChangeView;
         private System.Windows.Forms.TextBox txtContent;
-        private System.Windows.Forms.Label lbAccount;
         private System.Windows.Forms.Label lbThem;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.MenuStrip menuStrip1;

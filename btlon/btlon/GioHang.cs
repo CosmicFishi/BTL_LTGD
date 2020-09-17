@@ -55,11 +55,17 @@ namespace btlon
 
         private void GioHang_Load(object sender, EventArgs e)
         {
+            //Load lại thông tin khách khi sửa
+            ThongTinKhachHang tt = new ThongTinKhachHang();
+            tt.Show();
+            tt.Hide();
+            tt.Close();
             //MessageBox.Show("running");
-            lbTen.Text = tenTK;
-            lbSoTK.Text = soDT;
+            lbTen.Text = ThongTinKhachHang.ten;
+            lbSoTK.Text = ThongTinKhachHang.std;
+            //lbTen.Text = tenTK;
+            //lbSoTK.Text = soDT;
             tinhTongTien();
-
             //MessageBox.Show(listView1.Items[1].SubItems[3].Text.ToString());
             
         }
